@@ -1,7 +1,7 @@
 /*==============================================================*/
 /* Database name:  DATABASECOUNTRYHL                            */
-/* DBMS name:      Microsoft SQL Server 2014                    */
-/* Created on:     7/11/2016 9:03:43 PM                         */
+/* DBMS name:      Microsoft SQL Server 2016                    */
+/* Created on:     01/11/2016 23:38:06                          */
 /*==============================================================*/
 
 
@@ -18,70 +18,70 @@ use DATABASECOUNTRYHL
 go
 
 /*==============================================================*/
-/* Table: TBCOUNTRY                                             */
+/* Table: CITY                                                  */
 /*==============================================================*/
-create table TBCOUNTRY (
-   COU_ID               int                  identity,
+create table CITY (
+   CIT_ID               int                  not null,
+   STA_ID               int                  not null,
+   CIT_NAME             varchar(100)         not null,
+   constraint PK_CITY primary key (CIT_ID)
+)
+go
+
+/*==============================================================*/
+/* Index: STATE_FOR_CITY_FK                                     */
+/*==============================================================*/
+
+
+
+
+create nonclustered index STATE_FOR_CITY_FK on CITY (STA_ID ASC)
+go
+
+/*==============================================================*/
+/* Table: COUNTRY                                               */
+/*==============================================================*/
+create table COUNTRY (
+   COU_ID               int                  not null,
    COU_NOME             varchar(100)         not null,
    COU_NAME             varchar(100)         not null,
    COU_NOMBRE           varchar(100)         not null,
    COU_ISO31661NUMERIC  int                  not null,
-   COU_ISO31661ALPHA2   int                  not null,
-   COU_ISO31661ALPHA3   int                  not null,
-   constraint PK_TBCOUNTRY primary key (COU_ID)
+   COU_ISO31661ALPHA2   char(2)              not null,
+   COU_ISO31661ALPHA3   char(3)              not null,
+   constraint PK_COUNTRY primary key (COU_ID)
 )
 go
 
 /*==============================================================*/
-/* Table: TBCOUNTRYSTATE                                        */
+/* Table: STATE                                                 */
 /*==============================================================*/
-create table TBCOUNTRYSTATE (
-   CST_ID               int                  identity,
+create table STATE (
+   STA_ID               int                  not null,
    COU_ID               int                  not null,
-   CST_NAME             varchar(100)         not null,
-   CST_UF               varchar(2)           not null,
-   constraint PK_TBCOUNTRYSTATE primary key (CST_ID)
+   STA_NAME             varchar(100)         not null,
+   STA_UF               char(2)              not null,
+   constraint PK_STATE primary key (STA_ID)
 )
 go
 
 /*==============================================================*/
-/* Index: COUNTRY_STATES_FK                                     */
+/* Index: COUNTRY_FOR_STATE_FK                                  */
 /*==============================================================*/
 
 
 
 
-create nonclustered index COUNTRY_STATES_FK on TBCOUNTRYSTATE (COU_ID ASC)
+create nonclustered index COUNTRY_FOR_STATE_FK on STATE (COU_ID ASC)
 go
 
-/*==============================================================*/
-/* Table: TBSTATECITY                                           */
-/*==============================================================*/
-create table TBSTATECITY (
-   SCI_ID               int                  identity,
-   CST_ID               int                  not null,
-   SCI_NAME             varchar(100)         not null,
-   constraint PK_TBSTATECITY primary key (SCI_ID)
-)
+alter table CITY
+   add constraint FK_CITY_STATE_FOR_STATE foreign key (STA_ID)
+      references STATE (STA_ID)
 go
 
-/*==============================================================*/
-/* Index: STATE_CITY_FK                                         */
-/*==============================================================*/
-
-
-
-
-create nonclustered index STATE_CITY_FK on TBSTATECITY (CST_ID ASC)
-go
-
-alter table TBCOUNTRYSTATE
-   add constraint FK_TBCOUNTR_COUNTRY_S_TBCOUNTR foreign key (COU_ID)
-      references TBCOUNTRY (COU_ID)
-go
-
-alter table TBSTATECITY
-   add constraint FK_TBSTATEC_STATE_CIT_TBCOUNTR foreign key (CST_ID)
-      references TBCOUNTRYSTATE (CST_ID)
+alter table STATE
+   add constraint FK_STATE_COUNTRY_F_COUNTRY foreign key (COU_ID)
+      references COUNTRY (COU_ID)
 go
 

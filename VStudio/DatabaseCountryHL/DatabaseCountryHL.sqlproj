@@ -125,15 +125,20 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="Security\" />
     <Folder Include="Schema_Compare" />
+    <Folder Include="Snapshots" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\dbo.TBCOUNTRY.sql" />
-    <Build Include="dbo\Tables\dbo.TBCOUNTRYSTATE.sql" />
-    <Build Include="dbo\Tables\dbo.TBSTATECITY.sql" />
     <Build Include="Security\Permissions.sql" />
+    <Build Include="dbo\Tables\dbo.CITY.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRY.sql" />
+    <Build Include="dbo\Tables\dbo.STATE.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema_Compare\Local_DatabaseCountryHL.scmp" />
     <None Include="Schema_Compare\Remoto_DatabaseCountryHL.scmp" />
+    <None Include="Snapshots\1DatabaseCountryHL_2016-11-01_23-05-25.dacpac" />
+    <None Include="Snapshots\2DatabaseCountryHL_2016-11-01_23-40-27.dacpac" />
   </ItemGroup>
 </Project>
