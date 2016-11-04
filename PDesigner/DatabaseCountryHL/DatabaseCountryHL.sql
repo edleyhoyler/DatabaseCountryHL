@@ -1,7 +1,7 @@
 /*==============================================================*/
 /* Database name:  DATABASECOUNTRYHL                            */
 /* DBMS name:      Microsoft SQL Server 2016                    */
-/* Created on:     03/11/2016 21:04:04                          */
+/* Created on:     03/11/2016 23:24:47                          */
 /*==============================================================*/
 
 
@@ -21,7 +21,7 @@ go
 /* Table: CITY                                                  */
 /*==============================================================*/
 CREATE TABLE CITY (
-   CIT_ID               INT                  NOT NULL,
+   CIT_ID               INT                  IDENTITY,
    STA_ID               INT                  NOT NULL,
    CIT_NAME             VARCHAR(100)         NOT NULL
 )
@@ -45,7 +45,7 @@ go
 /* Table: COUNTRY                                               */
 /*==============================================================*/
 CREATE TABLE COUNTRY (
-   COU_ID               INT                  NOT NULL,
+   COU_ID               INT                  IDENTITY,
    COU_NOME             VARCHAR(100)         NOT NULL,
    COU_NAME             VARCHAR(100)         NOT NULL,
    COU_NOMBRE           VARCHAR(100)         NOT NULL,
@@ -63,7 +63,7 @@ go
 /* Table: DESCRIPTION_CITY                                      */
 /*==============================================================*/
 CREATE TABLE DESCRIPTION_CITY (
-   DCI_ID               INT                  NOT NULL,
+   DCI_ID               INT                  IDENTITY,
    CIT_ID               INT                  NOT NULL,
    DCI_DESCRIPTION      VARCHAR(999)         NULL
 )
@@ -87,7 +87,7 @@ go
 /* Table: DESCRIPTION_COUNTRY                                   */
 /*==============================================================*/
 CREATE TABLE DESCRIPTION_COUNTRY (
-   DCO_ID               INT                  NOT NULL,
+   DCO_ID               INT                  IDENTITY,
    COU_ID               INT                  NOT NULL,
    DCO_DESCRIPTION      VARCHAR(999)         NOT NULL
 )
@@ -111,7 +111,7 @@ go
 /* Table: DESCRIPTION_STATE                                     */
 /*==============================================================*/
 CREATE TABLE DESCRIPTION_STATE (
-   DST_ID               INT                  NOT NULL,
+   DST_ID               INT                  IDENTITY,
    STA_ID               INT                  NOT NULL,
    DST_DESCRIPTION      VARCHAR(999)         NOT NULL
 )
@@ -135,7 +135,7 @@ go
 /* Table: STATE                                                 */
 /*==============================================================*/
 CREATE TABLE STATE (
-   STA_ID               INT                  NOT NULL,
+   STA_ID               INT                  IDENTITY,
    COU_ID               INT                  NOT NULL,
    STA_NAME             VARCHAR(100)         NOT NULL,
    STA_UF               CHAR(2)              NOT NULL

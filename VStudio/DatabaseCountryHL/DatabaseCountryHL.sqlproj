@@ -127,6 +127,9 @@
     <Folder Include="Schema_Compare" />
     <Folder Include="Snapshots" />
     <Folder Include="Scripts\" />
+    <Folder Include="Scripts\PostDeployment" />
+    <Folder Include="Scripts\PreDeployment" />
+    <Folder Include="Scripts\Data" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema_Compare\Local_DatabaseCountryHL.scmp" />
@@ -134,6 +137,7 @@
     <None Include="Snapshots\1DatabaseCountryHL_2016-11-01_23-05-25.dacpac" />
     <None Include="Snapshots\2DatabaseCountryHL_2016-11-01_23-40-27.dacpac" />
     <None Include="Snapshots\3DatabaseCountryHL_2016-11-03_21-16-43.dacpac" />
+    <None Include="Snapshots\4DatabaseCountryHL_2016-11-44_00-01-19.dacpac" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\dbo.CITY.sql" />
@@ -143,5 +147,10 @@
     <Build Include="dbo\Tables\dbo.DESCRIPTION_STATE.sql" />
     <Build Include="dbo\Tables\dbo.STATE.sql" />
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <PostDeploy Include="Scripts\PostDeployment\Script.PostDeployment.sql" />
+    <None Include="Scripts\Data\Script.Add.Country.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Scripts\PreDeployment\Script.PreDeployment.sql" />
   </ItemGroup>
 </Project>
