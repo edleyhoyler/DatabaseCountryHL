@@ -4,8 +4,8 @@ Database for All Country
 <br/>
 
 #### IDE
-* Visual Studio 2015 Update 3
-* SAP PowerDesigner 16.5 SP5
+* Visual Studio 2015 Update 3 (Trial)
+* SAP PowerDesigner 16.6 SP1  (Trial)
 <br/>
 
 #### Links:
@@ -17,6 +17,6 @@ Database for All Country
 <br/>
 
 #### Language List
-* English
-* Portuguese (Brazilian)
+* English                [OK]
+* Portuguese (Brazilian) [  ]
 <br/>

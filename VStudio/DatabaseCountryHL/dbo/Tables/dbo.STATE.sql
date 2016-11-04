@@ -1,20 +1,19 @@
 ﻿/*==============================================================*/
 /* Table: STATE                                                 */
 /*==============================================================*/
-/*==============================================================*/
-/* Table: STATE                                                 */
-/*==============================================================*/
-create table STATE (
-   STA_ID               int                  not null,
-   COU_ID               int                  not null,
-   STA_NAME             varchar(100)         not null,
-   STA_UF               char(2)              not null,
-   constraint PK_STATE primary key (STA_ID)
+CREATE TABLE STATE (
+   STA_ID               INT                  NOT NULL,
+   COU_ID               INT                  NOT NULL,
+   STA_NAME             VARCHAR(100)         NOT NULL,
+   STA_UF               CHAR(2)              NOT NULL
 )
 GO
-alter table STATE
-   add constraint FK_STATE_COUNTRY_F_COUNTRY foreign key (COU_ID)
-      references COUNTRY (COU_ID)
+ALTER TABLE STATE
+   ADD CONSTRAINT FK_STATE_COUNTRY_F_COUNTRY FOREIGN KEY (COU_ID)
+      REFERENCES COUNTRY (COU_ID)
+GO
+ALTER TABLE STATE
+   ADD CONSTRAINT PK_STATE PRIMARY KEY (STA_ID)
 GO
 /*==============================================================*/
 /* Index: COUNTRY_FOR_STATE_FK                                  */
@@ -23,11 +22,4 @@ GO
 
 
 
-/*==============================================================*/
-/* Index: COUNTRY_FOR_STATE_FK                                  */
-/*==============================================================*/
-
-
-
-
-create nonclustered index COUNTRY_FOR_STATE_FK on STATE (COU_ID ASC)
+CREATE NONCLUSTERED INDEX COUNTRY_FOR_STATE_FK ON STATE (COU_ID ASC)

@@ -1,16 +1,15 @@
 ﻿/*==============================================================*/
 /* Table: COUNTRY                                               */
 /*==============================================================*/
-/*==============================================================*/
-/* Table: COUNTRY                                               */
-/*==============================================================*/
-create table COUNTRY (
-   COU_ID               int                  not null,
-   COU_NOME             varchar(100)         not null,
-   COU_NAME             varchar(100)         not null,
-   COU_NOMBRE           varchar(100)         not null,
-   COU_ISO31661NUMERIC  int                  not null,
-   COU_ISO31661ALPHA2   char(2)              not null,
-   COU_ISO31661ALPHA3   char(3)              not null,
-   constraint PK_COUNTRY primary key (COU_ID)
+CREATE TABLE COUNTRY (
+   COU_ID               INT                  NOT NULL,
+   COU_NOME             VARCHAR(100)         NOT NULL,
+   COU_NAME             VARCHAR(100)         NOT NULL,
+   COU_NOMBRE           VARCHAR(100)         NOT NULL,
+   COU_ISO31661NUMERIC  INT                  NOT NULL,
+   COU_ISO31661ALPHA2   CHAR(2)              NOT NULL,
+   COU_ISO31661ALPHA3   CHAR(3)              NOT NULL
 )
+GO
+ALTER TABLE COUNTRY
+   ADD CONSTRAINT PK_COUNTRY PRIMARY KEY (COU_ID)
