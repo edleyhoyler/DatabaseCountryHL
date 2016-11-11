@@ -261,5 +261,6 @@ VALUES
 (N'África do Sul',N'South Africa',N'Sudáfrica',710,N'ZAF',N'ZA'),
 (N'Zâmbia',N'Zambia',N'Zambia',894,N'ZMB',N'ZM'),
 (N'Zimbabwe',N'Zimbabwe',N'Zimbabue',716,N'ZWE',N'ZW');
+GO
 PRINT '|Add Country [OK]                  |';
 GO

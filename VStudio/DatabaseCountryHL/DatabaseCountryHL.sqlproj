@@ -130,6 +130,7 @@
     <Folder Include="Scripts\PostDeployment" />
     <Folder Include="Scripts\PreDeployment" />
     <Folder Include="Scripts\Data" />
+    <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema_Compare\Local_DatabaseCountryHL.scmp" />
@@ -140,17 +141,24 @@
     <None Include="Snapshots\4DatabaseCountryHL_2016-11-44_00-01-19.dacpac" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\dbo.CITY.sql" />
-    <Build Include="dbo\Tables\dbo.COUNTRY.sql" />
-    <Build Include="dbo\Tables\dbo.DESCRIPTION_CITY.sql" />
-    <Build Include="dbo\Tables\dbo.DESCRIPTION_COUNTRY.sql" />
-    <Build Include="dbo\Tables\dbo.DESCRIPTION_STATE.sql" />
-    <Build Include="dbo\Tables\dbo.STATE.sql" />
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
     <PostDeploy Include="Scripts\PostDeployment\Script.PostDeployment.sql" />
     <None Include="Scripts\Data\Script.Add.Country.sql" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="Scripts\PreDeployment\Script.PreDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\dbo.STATE.sql" />
+    <Build Include="dbo\Tables\dbo.FLAG_STATE.sql" />
+    <Build Include="dbo\Tables\dbo.FLAG_COUNTRY.sql" />
+    <Build Include="dbo\Tables\dbo.FLAG_CITY.sql" />
+    <Build Include="dbo\Tables\dbo.DESCRIPTION_STATE.sql" />
+    <Build Include="dbo\Tables\dbo.DESCRIPTION_COUNTRY.sql" />
+    <Build Include="dbo\Tables\dbo.DESCRIPTION_CITY.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRY.sql" />
+    <Build Include="dbo\Tables\dbo.CITY.sql" />
+    <Build Include="dbo\Stored Procedures\dbo.COUNTRY_CRUD.sql" />
+    <Build Include="dbo\Stored Procedures\dbo.CRUD_LIST_ARRAY.sql" />
   </ItemGroup>
 </Project>

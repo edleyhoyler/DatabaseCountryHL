@@ -1,0 +1,12 @@
+[ConnectionProfile]
+ConnectionType=Native
+Database=DatabaseCountryHL
+Dbms=SNC SQL Native Client
+DelimitIdentifier=Yes
+Description=(localdb)\MSSQLLocalDB
+DisableBind=0
+Provider=SQLNCLI11
+ProviderString=OLE DB Services=-4
+ServerName=(localdb)\MSSQLLocalDB
+TrimSpaces=0
+TrustedConnection=1

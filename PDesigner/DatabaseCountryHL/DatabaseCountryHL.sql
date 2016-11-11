@@ -1,10 +1,10 @@
 /*==============================================================*/
-/* Database name:  DATABASECOUNTRYHL                            */
+/* Database name:  DatabaseCountryHL                            */
 /* DBMS name:      Microsoft SQL Server 2016                    */
-/* Created on:     03/11/2016 23:24:47                          */
+/* Created on:     10/11/2016 19:52:17                          */
 /*==============================================================*/
 
-
+USE MASTER;
 DROP DATABASE DATABASECOUNTRYHL
 go
 
@@ -65,7 +65,7 @@ go
 CREATE TABLE DESCRIPTION_CITY (
    DCI_ID               INT                  IDENTITY,
    CIT_ID               INT                  NOT NULL,
-   DCI_DESCRIPTION      VARCHAR(999)         NULL
+   DCI_DESCRIPTION      VARCHAR(999)         NOT NULL
 )
 go
 
@@ -132,6 +132,78 @@ CREATE NONCLUSTERED INDEX STATE_FOR_DESCRIPTIONSTATE_FK ON DESCRIPTION_STATE (ST
 go
 
 /*==============================================================*/
+/* Table: FLAG_CITY                                             */
+/*==============================================================*/
+CREATE TABLE FLAG_CITY (
+   FCI_ID               INT                  IDENTITY,
+   CIT_ID               INT                  NOT NULL,
+   FCI_FLAG             VARBINARY(8000)      NOT NULL
+)
+go
+
+ALTER TABLE FLAG_CITY
+   ADD CONSTRAINT PK_FLAG_CITY PRIMARY KEY (FCI_ID)
+go
+
+/*==============================================================*/
+/* Index: CITY_FOR_FLAGCITY_FK                                  */
+/*==============================================================*/
+
+
+
+
+CREATE NONCLUSTERED INDEX CITY_FOR_FLAGCITY_FK ON FLAG_CITY (CIT_ID ASC)
+go
+
+/*==============================================================*/
+/* Table: FLAG_COUNTRY                                          */
+/*==============================================================*/
+CREATE TABLE FLAG_COUNTRY (
+   FCO_ID               INT                  IDENTITY,
+   COU_ID               INT                  NOT NULL,
+   FCO_FLAG             VARBINARY(8000)      NOT NULL
+)
+go
+
+ALTER TABLE FLAG_COUNTRY
+   ADD CONSTRAINT PK_FLAG_COUNTRY PRIMARY KEY (FCO_ID)
+go
+
+/*==============================================================*/
+/* Index: COUNTRY_FOR_FLAGCOUNTRY_FK                            */
+/*==============================================================*/
+
+
+
+
+CREATE NONCLUSTERED INDEX COUNTRY_FOR_FLAGCOUNTRY_FK ON FLAG_COUNTRY (COU_ID ASC)
+go
+
+/*==============================================================*/
+/* Table: FLAG_STATE                                            */
+/*==============================================================*/
+CREATE TABLE FLAG_STATE (
+   FST_ID               INT                  IDENTITY,
+   STA_ID               INT                  NOT NULL,
+   FST_FLAG             VARBINARY(8000)      NOT NULL
+)
+go
+
+ALTER TABLE FLAG_STATE
+   ADD CONSTRAINT PK_FLAG_STATE PRIMARY KEY (FST_ID)
+go
+
+/*==============================================================*/
+/* Index: STATE_FOR_FLAGSTATE_FK                                */
+/*==============================================================*/
+
+
+
+
+CREATE NONCLUSTERED INDEX STATE_FOR_FLAGSTATE_FK ON FLAG_STATE (STA_ID ASC)
+go
+
+/*==============================================================*/
 /* Table: STATE                                                 */
 /*==============================================================*/
 CREATE TABLE STATE (
@@ -176,8 +248,22 @@ ALTER TABLE DESCRIPTION_STATE
       REFERENCES STATE (STA_ID)
 go
 
+ALTER TABLE FLAG_CITY
+   ADD CONSTRAINT FK_FLAG_CIT_CITY_FOR__CITY FOREIGN KEY (CIT_ID)
+      REFERENCES CITY (CIT_ID)
+go
+
+ALTER TABLE FLAG_COUNTRY
+   ADD CONSTRAINT FK_FLAG_COU_COUNTRY_F_COUNTRY FOREIGN KEY (COU_ID)
+      REFERENCES COUNTRY (COU_ID)
+go
+
+ALTER TABLE FLAG_STATE
+   ADD CONSTRAINT FK_FLAG_STA_STATE_FOR_STATE FOREIGN KEY (STA_ID)
+      REFERENCES STATE (STA_ID)
+go
+
 ALTER TABLE STATE
    ADD CONSTRAINT FK_STATE_COUNTRY_F_COUNTRY FOREIGN KEY (COU_ID)
       REFERENCES COUNTRY (COU_ID)
 go
-
