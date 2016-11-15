@@ -1,10 +1,11 @@
 /*==============================================================*/
 /* Database name:  DatabaseCountryHL                            */
 /* DBMS name:      Microsoft SQL Server 2016                    */
-/* Created on:     10/11/2016 19:52:17                          */
+/* Created on:     15/11/2016 08:14:44                          */
 /*==============================================================*/
 
 USE MASTER;
+go
 DROP DATABASE DATABASECOUNTRYHL
 go
 
@@ -267,3 +268,4 @@ ALTER TABLE STATE
    ADD CONSTRAINT FK_STATE_COUNTRY_F_COUNTRY FOREIGN KEY (COU_ID)
       REFERENCES COUNTRY (COU_ID)
 go
+
