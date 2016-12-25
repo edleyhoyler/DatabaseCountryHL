@@ -11,13 +11,17 @@
 */
 PRINT ''
 GO
-PRINT '|------------ Pre Deployment [  ] |';
+PRINT ' _________________________________'
+GO
+PRINT '|------------ Pre-Deployment [  ] |';
 GO
 PRINT '|[  ]                             |';
 GO
 PRINT '|[OK]                             |';
 GO
-PRINT '|------------ Pre Deployment [OK] |';
+PRINT '|------------ Pre-Deployment [OK] |';
+GO
+PRINT ' _________________________________'
 GO
 PRINT ''
 GO

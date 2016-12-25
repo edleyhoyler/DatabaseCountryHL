@@ -11,15 +11,24 @@ Post-Deployment Script Template
 */
 PRINT ''
 GO
-PRINT '|------------ Post Deployment [  ] |';
+PRINT ' __________________________________________ '
+GO
+PRINT '|------------ Post-Deployment [  ]';
 GO
 :SETVAR ScriptsPath "..\Data\"
 GO
-:SETVAR FileNameCountry "Script.Add.Country.sql"
+:SETVAR FileNameContinent        "Script.Add.Continent.sql"
+:SETVAR FileNameCountry          "Script.Add.Country.sql"
+:SETVAR FileNameCurrency         "Script.Add.Currency.sql"
+:SETVAR FileNameCountry_Currency "Script.Add.Country_Currency.sql"
 GO
+:r $(ScriptsPath)$(FileNameContinent)
 :r $(ScriptsPath)$(FileNameCountry)
+:r $(ScriptsPath)$(FileNameCurrency)
+:r $(ScriptsPath)$(FileNameCountry_Currency)
 GO
-PRINT '|------------ Post Deployment [OK] |';
+PRINT '|------------ Post-Deployment [OK]';
+PRINT ' __________________________________________ '
 GO
 PRINT ''
 GO
