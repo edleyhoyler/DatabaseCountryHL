@@ -123,7 +123,6 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
-    <Folder Include="dbo\Tables\" />
     <Folder Include="Security\" />
     <Folder Include="Schema_Compare" />
     <Folder Include="Snapshots" />
@@ -132,6 +131,7 @@
     <Folder Include="Scripts\PreDeployment" />
     <Folder Include="Scripts\Data" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema_Compare\Local_DatabaseCountryHL.scmp" />
@@ -150,25 +150,25 @@
     <PreDeploy Include="Scripts\PreDeployment\Script.PreDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\dbo.STATE.sql" />
-    <Build Include="dbo\Tables\dbo.FLAG_STATE.sql" />
-    <Build Include="dbo\Tables\dbo.FLAG_COUNTRY.sql" />
-    <Build Include="dbo\Tables\dbo.FLAG_CITY.sql" />
-    <Build Include="dbo\Tables\dbo.DESCRIPTION_STATE.sql" />
-    <Build Include="dbo\Tables\dbo.DESCRIPTION_COUNTRY.sql" />
-    <Build Include="dbo\Tables\dbo.DESCRIPTION_CITY.sql" />
-    <Build Include="dbo\Tables\dbo.COUNTRY.sql" />
-    <Build Include="dbo\Tables\dbo.CITY.sql" />
     <None Include="dbo\Stored Procedures\dbo.COUNTRY_CRUD.sql" />
     <None Include="dbo\Stored Procedures\dbo.CRUD_LIST_ARRAY.sql" />
-    <Build Include="dbo\Tables\dbo.COUNTRY_FLAG.sql" />
-    <Build Include="dbo\Tables\dbo.COUNTRY_DESCRIPTION.sql" />
-    <Build Include="dbo\Tables\dbo.COUNTRY_CAPITAL.sql" />
-    <Build Include="dbo\Tables\dbo.CURRENCY.sql" />
-    <Build Include="dbo\Tables\dbo.COUNTRY_CURRENCY.sql" />
-    <Build Include="dbo\Tables\dbo.CONTINENT.sql" />
     <None Include="Scripts\Data\Script.Add.Continent.sql" />
     <None Include="Scripts\Data\Script.Add.Currency.sql" />
     <None Include="Scripts\Data\Script.Add.Country_Currency.sql" />
+    <None Include="Scripts\Data\Script.Add.Country_Capital.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\dbo.STATES_FLAG.sql" />
+    <Build Include="dbo\Tables\dbo.STATES.sql" />
+    <Build Include="dbo\Tables\dbo.CURRENCY.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRY_FLAG.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRY_CURRENCY.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRY_CAPITAL.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRY.sql" />
+    <Build Include="dbo\Tables\dbo.CONTINENT.sql" />
+    <Build Include="dbo\Tables\dbo.CITY_FLAG.sql" />
+    <Build Include="dbo\Tables\dbo.CITY.sql" />
+    <None Include="Scripts\Data\Script.Add.States.sql" />
+    <None Include="Scripts\Data\Script.Add.City.sql" />
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 /*==============================================================*/
 /* Database name:  DatabaseCountryHL                            */
 /* DBMS name:      Microsoft SQL Server 2016                    */
-/* Created on:     25/12/2016 00:13:40                          */
+/* Created on:     26/12/2016 17:13:53                          */
 /*==============================================================*/
 
 USE MASTER;
@@ -40,6 +40,30 @@ go
 
 
 CREATE NONCLUSTERED INDEX STATE_FOR_CITY_FK ON CITY (STA_ID ASC)
+go
+
+/*==============================================================*/
+/* Table: CITY_FLAG                                             */
+/*==============================================================*/
+CREATE TABLE CITY_FLAG (
+   CIF_ID               INT                  IDENTITY,
+   CIT_ID               INT                  NOT NULL,
+   CIF_FLAG             VARBINARY(8000)      NOT NULL
+)
+go
+
+ALTER TABLE CITY_FLAG
+   ADD CONSTRAINT PK_CITY_FLAG PRIMARY KEY (CIF_ID)
+go
+
+/*==============================================================*/
+/* Index: CITY_FOR_FLAGCITY_FK                                  */
+/*==============================================================*/
+
+
+
+
+CREATE NONCLUSTERED INDEX CITY_FOR_FLAGCITY_FK ON CITY_FLAG (CIT_ID ASC)
 go
 
 /*==============================================================*/
@@ -152,41 +176,17 @@ CREATE NONCLUSTERED INDEX CURRENCYCOUNTRY_FK ON COUNTRY_CURRENCY (CUR_ID ASC)
 go
 
 /*==============================================================*/
-/* Table: COUNTRY_DESCRIPTION                                   */
-/*==============================================================*/
-CREATE TABLE COUNTRY_DESCRIPTION (
-   CDE_ID               INT                  IDENTITY,
-   COU_ID               INT                  NOT NULL,
-   CDE_DESCRIPTION      VARCHAR(999)         NOT NULL
-)
-go
-
-ALTER TABLE COUNTRY_DESCRIPTION
-   ADD CONSTRAINT PK_COUNTRY_DESCRIPTION PRIMARY KEY (CDE_ID)
-go
-
-/*==============================================================*/
-/* Index: COUNTRYDESCRIPTION_FK                                 */
-/*==============================================================*/
-
-
-
-
-CREATE NONCLUSTERED INDEX COUNTRYDESCRIPTION_FK ON COUNTRY_DESCRIPTION (COU_ID ASC)
-go
-
-/*==============================================================*/
 /* Table: COUNTRY_FLAG                                          */
 /*==============================================================*/
 CREATE TABLE COUNTRY_FLAG (
-   CFL_ID               INT                  IDENTITY,
+   COF_ID               INT                  IDENTITY,
    COU_ID               INT                  NOT NULL,
-   CFL_FLAG             VARBINARY(8000)      NOT NULL
+   COF_FLAG             VARBINARY(8000)      NOT NULL
 )
 go
 
 ALTER TABLE COUNTRY_FLAG
-   ADD CONSTRAINT PK_COUNTRY_FLAG PRIMARY KEY (CFL_ID)
+   ADD CONSTRAINT PK_COUNTRY_FLAG PRIMARY KEY (COF_ID)
 go
 
 /*==============================================================*/
@@ -215,114 +215,18 @@ ALTER TABLE CURRENCY
 go
 
 /*==============================================================*/
-/* Table: DESCRIPTION_CITY                                      */
+/* Table: STATES                                                */
 /*==============================================================*/
-CREATE TABLE DESCRIPTION_CITY (
-   DCI_ID               INT                  IDENTITY,
-   CIT_ID               INT                  NOT NULL,
-   DCI_DESCRIPTION      VARCHAR(999)         NOT NULL
-)
-go
-
-ALTER TABLE DESCRIPTION_CITY
-   ADD CONSTRAINT PK_DESCRIPTION_CITY PRIMARY KEY (DCI_ID)
-go
-
-/*==============================================================*/
-/* Index: CITY_FOR_DESCRIPTIONCITY_FK                           */
-/*==============================================================*/
-
-
-
-
-CREATE NONCLUSTERED INDEX CITY_FOR_DESCRIPTIONCITY_FK ON DESCRIPTION_CITY (CIT_ID ASC)
-go
-
-/*==============================================================*/
-/* Table: DESCRIPTION_STATE                                     */
-/*==============================================================*/
-CREATE TABLE DESCRIPTION_STATE (
-   DST_ID               INT                  IDENTITY,
-   STA_ID               INT                  NOT NULL,
-   DST_DESCRIPTION      VARCHAR(999)         NOT NULL
-)
-go
-
-ALTER TABLE DESCRIPTION_STATE
-   ADD CONSTRAINT PK_DESCRIPTION_STATE PRIMARY KEY (DST_ID)
-go
-
-/*==============================================================*/
-/* Index: STATE_FOR_DESCRIPTIONSTATE_FK                         */
-/*==============================================================*/
-
-
-
-
-CREATE NONCLUSTERED INDEX STATE_FOR_DESCRIPTIONSTATE_FK ON DESCRIPTION_STATE (STA_ID ASC)
-go
-
-/*==============================================================*/
-/* Table: FLAG_CITY                                             */
-/*==============================================================*/
-CREATE TABLE FLAG_CITY (
-   FCI_ID               INT                  IDENTITY,
-   CIT_ID               INT                  NOT NULL,
-   FCI_FLAG             VARBINARY(8000)      NOT NULL
-)
-go
-
-ALTER TABLE FLAG_CITY
-   ADD CONSTRAINT PK_FLAG_CITY PRIMARY KEY (FCI_ID)
-go
-
-/*==============================================================*/
-/* Index: CITY_FOR_FLAGCITY_FK                                  */
-/*==============================================================*/
-
-
-
-
-CREATE NONCLUSTERED INDEX CITY_FOR_FLAGCITY_FK ON FLAG_CITY (CIT_ID ASC)
-go
-
-/*==============================================================*/
-/* Table: FLAG_STATE                                            */
-/*==============================================================*/
-CREATE TABLE FLAG_STATE (
-   FST_ID               INT                  IDENTITY,
-   STA_ID               INT                  NOT NULL,
-   FST_FLAG             VARBINARY(8000)      NOT NULL
-)
-go
-
-ALTER TABLE FLAG_STATE
-   ADD CONSTRAINT PK_FLAG_STATE PRIMARY KEY (FST_ID)
-go
-
-/*==============================================================*/
-/* Index: STATE_FOR_FLAGSTATE_FK                                */
-/*==============================================================*/
-
-
-
-
-CREATE NONCLUSTERED INDEX STATE_FOR_FLAGSTATE_FK ON FLAG_STATE (STA_ID ASC)
-go
-
-/*==============================================================*/
-/* Table: STATE                                                 */
-/*==============================================================*/
-CREATE TABLE STATE (
+CREATE TABLE STATES (
    STA_ID               INT                  IDENTITY,
    COU_ID               INT                  NOT NULL,
-   STA_NAME             VARCHAR(100)         NOT NULL,
-   STA_UF               CHAR(2)              NOT NULL
+   STA_UF               CHAR(2)              NOT NULL,
+   STA_NAME             VARCHAR(100)         NOT NULL
 )
 go
 
-ALTER TABLE STATE
-   ADD CONSTRAINT PK_STATE PRIMARY KEY (STA_ID)
+ALTER TABLE STATES
+   ADD CONSTRAINT PK_STATES PRIMARY KEY (STA_ID)
 go
 
 /*==============================================================*/
@@ -332,12 +236,41 @@ go
 
 
 
-CREATE NONCLUSTERED INDEX COUNTRY_FOR_STATE_FK ON STATE (COU_ID ASC)
+CREATE NONCLUSTERED INDEX COUNTRY_FOR_STATE_FK ON STATES (COU_ID ASC)
+go
+
+/*==============================================================*/
+/* Table: STATES_FLAG                                           */
+/*==============================================================*/
+CREATE TABLE STATES_FLAG (
+   STF_ID               INT                  IDENTITY,
+   STA_ID               INT                  NOT NULL,
+   STF_FLAG             VARBINARY(8000)      NOT NULL
+)
+go
+
+ALTER TABLE STATES_FLAG
+   ADD CONSTRAINT PK_STATES_FLAG PRIMARY KEY (STF_ID)
+go
+
+/*==============================================================*/
+/* Index: STATE_FOR_FLAGSTATE_FK                                */
+/*==============================================================*/
+
+
+
+
+CREATE NONCLUSTERED INDEX STATE_FOR_FLAGSTATE_FK ON STATES_FLAG (STA_ID ASC)
 go
 
 ALTER TABLE CITY
-   ADD CONSTRAINT FK_CITY_STATE_FOR_STATE FOREIGN KEY (STA_ID)
-      REFERENCES STATE (STA_ID)
+   ADD CONSTRAINT FK_CITY_STATES_FO_STATES FOREIGN KEY (STA_ID)
+      REFERENCES STATES (STA_ID)
+go
+
+ALTER TABLE CITY_FLAG
+   ADD CONSTRAINT FK_CITY_FLA_CITY_FOR__CITY FOREIGN KEY (CIT_ID)
+      REFERENCES CITY (CIT_ID)
 go
 
 ALTER TABLE COUNTRY
@@ -360,37 +293,17 @@ ALTER TABLE COUNTRY_CURRENCY
       REFERENCES CURRENCY (CUR_ID)
 go
 
-ALTER TABLE COUNTRY_DESCRIPTION
-   ADD CONSTRAINT FK_COUNTRY__COUNTRYDE_COUNTRY FOREIGN KEY (COU_ID)
-      REFERENCES COUNTRY (COU_ID)
-go
-
 ALTER TABLE COUNTRY_FLAG
    ADD CONSTRAINT FK_COUNTRY__COUNTRYFL_COUNTRY FOREIGN KEY (COU_ID)
       REFERENCES COUNTRY (COU_ID)
 go
 
-ALTER TABLE DESCRIPTION_CITY
-   ADD CONSTRAINT FK_DESCRIPT_CITY_FOR__CITY FOREIGN KEY (CIT_ID)
-      REFERENCES CITY (CIT_ID)
-go
-
-ALTER TABLE DESCRIPTION_STATE
-   ADD CONSTRAINT FK_DESCRIPT_STATE_FOR_STATE FOREIGN KEY (STA_ID)
-      REFERENCES STATE (STA_ID)
-go
-
-ALTER TABLE FLAG_CITY
-   ADD CONSTRAINT FK_FLAG_CIT_CITY_FOR__CITY FOREIGN KEY (CIT_ID)
-      REFERENCES CITY (CIT_ID)
-go
-
-ALTER TABLE FLAG_STATE
-   ADD CONSTRAINT FK_FLAG_STA_STATE_FOR_STATE FOREIGN KEY (STA_ID)
-      REFERENCES STATE (STA_ID)
-go
-
-ALTER TABLE STATE
-   ADD CONSTRAINT FK_STATE_COUNTRY_F_COUNTRY FOREIGN KEY (COU_ID)
+ALTER TABLE STATES
+   ADD CONSTRAINT FK_STATES_COUNTRY_F_COUNTRY FOREIGN KEY (COU_ID)
       REFERENCES COUNTRY (COU_ID)
+go
+
+ALTER TABLE STATES_FLAG
+   ADD CONSTRAINT FK_STATES_F_STATES_FO_STATES FOREIGN KEY (STA_ID)
+      REFERENCES STATES (STA_ID)
 go

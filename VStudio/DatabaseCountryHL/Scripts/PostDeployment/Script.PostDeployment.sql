@@ -21,13 +21,20 @@ GO
 :SETVAR FileNameCountry          "Script.Add.Country.sql"
 :SETVAR FileNameCurrency         "Script.Add.Currency.sql"
 :SETVAR FileNameCountry_Currency "Script.Add.Country_Currency.sql"
+:SETVAR FileNameCountry_Capital  "Script.Add.Country_Capital.sql"
+:SETVAR FileNameStates           "Script.Add.States.sql"
+:SETVAR FileNameCity             "Script.Add.City.sql"
 GO
 :r $(ScriptsPath)$(FileNameContinent)
 :r $(ScriptsPath)$(FileNameCountry)
 :r $(ScriptsPath)$(FileNameCurrency)
 :r $(ScriptsPath)$(FileNameCountry_Currency)
+:r $(ScriptsPath)$(FileNameCountry_Capital)
+:r $(ScriptsPath)$(FileNameStates)
+:r $(ScriptsPath)$(FileNameCity)
 GO
 PRINT '|------------ Post-Deployment [OK]';
+GO
 PRINT ' __________________________________________ '
 GO
 PRINT ''

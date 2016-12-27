@@ -18,5 +18,5 @@ Database for All Country
 
 #### Language List
 * English                [OK]
-* Portuguese (Brazilian) [  ]
+* Portuguese (Brazilian) [OK]
 <br/>

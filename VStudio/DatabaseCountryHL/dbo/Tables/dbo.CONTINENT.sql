@@ -7,9 +7,3 @@
     CONSTRAINT [CKC_CON_ID_CONTINEN] CHECK ([CON_ID]>=(1) AND [CON_ID]<=(7))
 );
 
-
-
-
-
-
-
