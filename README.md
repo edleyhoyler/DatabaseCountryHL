@@ -6,6 +6,7 @@ Database for All Country
 #### IDE
 * Visual Studio 2015 Update 3 (Trial)
 * SAP PowerDesigner 16.6 SP1  (Trial)
+* Navicat Data Modeler 2.1.11 (Trial)
 <br/>
 
 #### Links:
