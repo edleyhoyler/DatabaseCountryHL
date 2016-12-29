@@ -20,6 +20,7 @@ GO
 :SETVAR FileNameContinent        "Script.Add.Continent.sql"
 :SETVAR FileNameCountry          "Script.Add.Country.sql"
 :SETVAR FileNameCurrency         "Script.Add.Currency.sql"
+:SETVAR FileNameCountry_Bacen	 "Script.Add.Country_Bacen.sql"
 :SETVAR FileNameCountry_Currency "Script.Add.Country_Currency.sql"
 :SETVAR FileNameCountry_Capital  "Script.Add.Country_Capital.sql"
 :SETVAR FileNameStates           "Script.Add.States.sql"
@@ -28,6 +29,7 @@ GO
 :r $(ScriptsPath)$(FileNameContinent)
 :r $(ScriptsPath)$(FileNameCountry)
 :r $(ScriptsPath)$(FileNameCurrency)
+:r $(ScriptsPath)$(FileNameCountry_Bacen)
 :r $(ScriptsPath)$(FileNameCountry_Currency)
 :r $(ScriptsPath)$(FileNameCountry_Capital)
 :r $(ScriptsPath)$(FileNameStates)

@@ -1,7 +1,7 @@
 /*==============================================================*/
 /* Database name:  DatabaseCountryHL                            */
 /* DBMS name:      Microsoft SQL Server 2016                    */
-/* Created on:     26/12/2016 17:13:53                          */
+/* Created on:     29/12/2016 15:41:28                          */
 /*==============================================================*/
 
 USE MASTER;
@@ -115,6 +115,30 @@ go
 
 
 CREATE NONCLUSTERED INDEX CONTINENTFORCOUNTRY_FK ON COUNTRY (CON_ID ASC)
+go
+
+/*==============================================================*/
+/* Table: COUNTRY_BACEN                                         */
+/*==============================================================*/
+CREATE TABLE COUNTRY_BACEN (
+   CBA_ID               INT                  IDENTITY,
+   COU_ID               INT                  NOT NULL,
+   CBA_CODIGO           INT                  NOT NULL
+)
+go
+
+ALTER TABLE COUNTRY_BACEN
+   ADD CONSTRAINT PK_COUNTRY_BACEN PRIMARY KEY (CBA_ID)
+go
+
+/*==============================================================*/
+/* Index: COUNTRYBACEN_FK                                       */
+/*==============================================================*/
+
+
+
+
+CREATE NONCLUSTERED INDEX COUNTRYBACEN_FK ON COUNTRY_BACEN (COU_ID ASC)
 go
 
 /*==============================================================*/
@@ -276,6 +300,11 @@ go
 ALTER TABLE COUNTRY
    ADD CONSTRAINT FK_COUNTRY_CONTINENT_CONTINEN FOREIGN KEY (CON_ID)
       REFERENCES CONTINENT (CON_ID)
+go
+
+ALTER TABLE COUNTRY_BACEN
+   ADD CONSTRAINT FK_COUNTRY__COUNTRYBA_COUNTRY FOREIGN KEY (COU_ID)
+      REFERENCES COUNTRY (COU_ID)
 go
 
 ALTER TABLE COUNTRY_CAPITAL

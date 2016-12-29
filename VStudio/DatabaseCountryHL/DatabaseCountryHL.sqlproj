@@ -141,6 +141,7 @@
     <None Include="Snapshots\3DatabaseCountryHL_2016-11-03_21-16-43.dacpac" />
     <None Include="Snapshots\4DatabaseCountryHL_2016-11-44_00-01-19.dacpac" />
     <None Include="Snapshots\5DatabaseCountryHL_2016-12-25_04-05-07.dacpac" />
+    <None Include="Snapshots\6DatabaseCountryHL_2016-12-29_16-10-34.dacpac" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\PostDeployment\Script.PostDeployment.sql" />
@@ -170,5 +171,7 @@
     <Build Include="dbo\Tables\dbo.CITY.sql" />
     <None Include="Scripts\Data\Script.Add.States.sql" />
     <None Include="Scripts\Data\Script.Add.City.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRY_BACEN.sql" />
+    <None Include="Scripts\Data\Script.Add.Country_Bacen.sql" />
   </ItemGroup>
 </Project>
