@@ -86,7 +86,7 @@
     <Recovery>SIMPLE</Recovery>
     <EnableFullTextSearch>True</EnableFullTextSearch>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
-    <DacVersion>1.0.0.1</DacVersion>
+    <DacVersion>1.0.0.2</DacVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -151,8 +151,8 @@
     <PreDeploy Include="Scripts\PreDeployment\Script.PreDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="dbo\Stored Procedures\dbo.COUNTRY_CRUD.sql" />
-    <None Include="dbo\Stored Procedures\dbo.CRUD_LIST_ARRAY.sql" />
+    <Build Include="dbo\Stored Procedures\dbo.COUNTRY_CRUD.sql" />
+    <Build Include="dbo\Stored Procedures\dbo.CRUD_LIST_ARRAY_ONLY.sql" />
     <None Include="Scripts\Data\Script.Add.Continent.sql" />
     <None Include="Scripts\Data\Script.Add.Currency.sql" />
     <None Include="Scripts\Data\Script.Add.Country_Currency.sql" />
@@ -173,5 +173,9 @@
     <None Include="Scripts\Data\Script.Add.City.sql" />
     <Build Include="dbo\Tables\dbo.COUNTRY_BACEN.sql" />
     <None Include="Scripts\Data\Script.Add.Country_Bacen.sql" />
+    <None Include="Scripts\Data\DataSource.sql" />
+    <None Include="dbo\Stored Procedures\dbo.PrintSQLResultsSQL2014.sql" />
+    <None Include="dbo\Stored Procedures\dbo.PrintSQLResultsSQL2012.sql" />
+    <None Include="dbo\Stored Procedures\dbo.PrintSQLResultsSQL2008R2.sql" />
   </ItemGroup>
 </Project>

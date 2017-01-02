@@ -1,7 +1,6 @@
 ﻿PRINT '|Add Country [  ]';
-GO
 PRINT '|$(ScriptsPath)$(FileNameCountry)';
-GO
+/*
 INSERT INTO [dbo].[COUNTRY]
 (
 	[CON_ID],
@@ -259,12 +258,57 @@ VALUES
 (1, N'South Africa', N'África do Sul', N'ZA', N'ZAF', 710),
 (1, N'Zambia', N'Zâmbia', N'ZM', N'ZMB', 894),
 (1, N'Zimbabwe', N'Zimbábue', N'ZW', N'ZWE', 716);
-GO
+*/
+DROP TABLE IF EXISTS [dbo].[#COUNTRY];
+SELECT DISTINCT
+	[C].[CON_ID]					AS [CON_ID],
+	[D].[NAME_EN]					AS [COU_NAME_EN], 
+	[D].[NAME_BR]					AS [COU_NAME_BR],
+	[D].[ISO31661Alpha2]			AS [COU_ISO31661_ALPHA2], 
+	[D].[ISO31661Alpha3]			AS [COU_ISO31661_ALPHA3], 
+	[D].[ISO31661numeric]			AS [COU_ISO31661_NUMBER] INTO [dbo].[#COUNTRY]
+FROM  [dbo].[#DataSourceSQL]	[D] 
+INNER JOIN 
+	  [dbo].[CONTINENT]	        [C]
+ON	
+	[D].[Continent]			  = [C].[CON_CODE]
+WHERE
+	[D].[Continent]			  = [C].[CON_CODE] 
+AND 
+	[D].[ISO2]				  = [D].[ISO31661Alpha2]
+AND 						 
+	[D].[NAME_EN]				IS NOT NULL
+AND
+	[D].[NAME_BR]				IS NOT NULL
+AND
+	[D].[ISO31661Alpha2]		IS NOT NULL
+AND
+	[D].[ISO31661Alpha3]		IS NOT NULL
+AND
+	[D].[ISO31661numeric]		IS NOT NULL;
+INSERT INTO [dbo].[COUNTRY]
+(
+	[CON_ID],
+	[COU_NAME_EN],
+	[COU_NAME_BR],
+	[COU_ISO31661_ALPHA2],
+	[COU_ISO31661_ALPHA3],
+	[COU_ISO31661_NUMBER]
+)
+(
+SELECT
+	[C].[CON_ID],
+	[C].[COU_NAME_EN], 
+	[C].[COU_NAME_BR],
+	[C].[COU_ISO31661_ALPHA2], 
+	[C].[COU_ISO31661_ALPHA3], 
+	[C].[COU_ISO31661_NUMBER]
+FROM  [dbo].[#COUNTRY] AS [C]
+);
 PRINT '|Add Country [OK]';
-GO
 --####################
 --##                ##
 --##     Version    ##
---##     1.0.0.1    ##
+--##     1.0.0.2    ##
 --##                ##
 --####################

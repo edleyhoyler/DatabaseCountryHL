@@ -1,7 +1,6 @@
 ﻿PRINT '|Add Country_Currency [  ]';
-GO
 PRINT '|$(ScriptsPath)$(FileNameCountry_Currency)';
-GO
+/*
 INSERT INTO [dbo].[COUNTRY_CURRENCY]
 (
 	[COU_ID],
@@ -243,12 +242,40 @@ VALUES
 (245, 145),
 (246, 146),
 (247, 147);
-GO
+*/
+DROP TABLE IF EXISTS [dbo].[#COUNTRY_CURRENCY];
+SELECT DISTINCT 
+	[CO].[COU_ID],
+	[CU].[CUR_ID] INTO [dbo].[#COUNTRY_CURRENCY]
+FROM 
+	[dbo].[#DataSourceSQL] [DA]
+INNER JOIN 
+	[dbo].[COUNTRY]  [CO]
+ON 
+	[DA].[ISO31661Alpha2] =  [CO].[COU_ISO31661_ALPHA2] 
+AND  
+	[DA].[ISO31661Alpha3] =  [CO].[COU_ISO31661_ALPHA3]
+INNER JOIN 
+	[dbo].[CURRENCY] [CU]
+ON 
+	[DA].[ISO4217currency_alphabetic_code] = [CU].[CUR_ISO4217_CODE]
+ORDER BY 
+	[CO].[COU_ID];
+INSERT INTO [dbo].[COUNTRY_CURRENCY]
+(
+	[COU_ID],
+	[CUR_ID]
+)
+(
+SELECT 
+	[CU].[COU_ID],
+	[CU].[CUR_ID]
+FROM [dbo].[#COUNTRY_CURRENCY] [CU] 
+); 
 PRINT '|Add Country Currency [OK]';
-GO
 --####################
 --##                ##
 --##     Version    ##
---##     1.0.0.1    ##
+--##     1.0.0.2    ##
 --##                ##
 --####################

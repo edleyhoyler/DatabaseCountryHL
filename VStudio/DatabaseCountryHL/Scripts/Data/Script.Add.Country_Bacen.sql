@@ -1,7 +1,6 @@
 ﻿PRINT '|Add Country Bacen[  ]';
-GO
 PRINT '|$(ScriptsPath)$(FileNameCountry_Bacen)';
-GO
+/*
 INSERT INTO [dbo].[COUNTRY_BACEN]
 (
 	[COU_ID], 
@@ -240,12 +239,36 @@ VALUES
 (245, 7560),
 (246, 8907),
 (247, 6653);
-GO
+*/
+DROP TABLE IF EXISTS [dbo].[#COUNTRY_BACEN];
+SELECT 
+	[C].[COU_ID], 
+	[D].[SL_BACEN] [CBA_CODIGO] INTO [dbo].[#COUNTRY_BACEN] 
+FROM 
+	[dbo].[#DataSourceSQL] [D] 
+INNER JOIN 
+	[dbo].[COUNTRY]		   [C] 
+ON  [C].[COU_ISO31661_ALPHA2] = [D].[SL_SIGLA] 
+WHERE 
+[SL_SIGLA] IS NOT NULL 
+AND 
+[SL_BACEN] IS NOT NULL;
+INSERT INTO [dbo].[COUNTRY_BACEN]
+(
+	[COU_ID],
+	[CBA_CODIGO]
+)
+(
+SELECT 
+	[CB].[COU_ID],
+	[CB].[CBA_CODIGO] 
+FROM
+	[dbo].[#COUNTRY_BACEN] [CB]
+);  
 PRINT '|Add Country Bacen [OK]';
-GO
 --####################
 --##                ##
 --##     Version    ##
---##     1.0.0.1    ##
+--##     1.0.0.2    ##
 --##                ##
 --####################

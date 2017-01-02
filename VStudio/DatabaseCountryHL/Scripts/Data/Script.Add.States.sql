@@ -1,7 +1,6 @@
 ﻿PRINT '|Add States [  ]';
-GO
 PRINT '|$(ScriptsPath)$(FileNameStates)';
-GO
+/*
 INSERT INTO [dbo].[STATES]
 (
 	[COU_ID],
@@ -36,12 +35,46 @@ VALUES
 ((SELECT [COU_ID] FROM [dbo].[COUNTRY] [C] WHERE (UPPER([C].[COU_NAME_BR])) = (UPPER('Brasil'))),'Sergipe','SE'),
 ((SELECT [COU_ID] FROM [dbo].[COUNTRY] [C] WHERE (UPPER([C].[COU_NAME_BR])) = (UPPER('Brasil'))),'São Paulo','SP'),
 ((SELECT [COU_ID] FROM [dbo].[COUNTRY] [C] WHERE (UPPER([C].[COU_NAME_BR])) = (UPPER('Brasil'))),'Tocantins','TO');
-GO
+*/
+DECLARE @COU_ID_BR INT = (SELECT [COU_ID] FROM [dbo].[COUNTRY] [C] WHERE (UPPER([C].[COU_NAME_BR])) = (UPPER('Brasil')));
+INSERT INTO [dbo].[STATES]
+(
+	[COU_ID],
+	[STA_NAME],
+	[STA_UF]
+)
+VALUES
+(@COU_ID_BR,'Acre','AC'),
+(@COU_ID_BR,'Alagoas','AL'),
+(@COU_ID_BR,'Amazonas','AM'),
+(@COU_ID_BR,'Amapá','AP'),
+(@COU_ID_BR,'Bahia','BA'),
+(@COU_ID_BR,'Ceará','CE'),
+(@COU_ID_BR,'Distrito Federal','DF'),
+(@COU_ID_BR,'Espírito Santo','ES'),
+(@COU_ID_BR,'Goiás','GO'),
+(@COU_ID_BR,'Maranhão','MA'),
+(@COU_ID_BR,'Minas Gerais','MG'),
+(@COU_ID_BR,'Mato Grosso do Sul','MS'),
+(@COU_ID_BR,'Mato Grosso','MT'),
+(@COU_ID_BR,'Pará','PA'),
+(@COU_ID_BR,'Paraíba','PB'),
+(@COU_ID_BR,'Pernambuco','PE'),
+(@COU_ID_BR,'Piauí','PI'),
+(@COU_ID_BR,'Paraná','PR'),
+(@COU_ID_BR,'Rio de Janeiro','RJ'),
+(@COU_ID_BR,'Rio Grande do Norte','RN'),
+(@COU_ID_BR,'Rondônia','RO'),
+(@COU_ID_BR,'Roraima','RR'),
+(@COU_ID_BR,'Rio Grande do Sul','RS'),
+(@COU_ID_BR,'Santa Catarina','SC'),
+(@COU_ID_BR,'Sergipe','SE'),
+(@COU_ID_BR,'São Paulo','SP'),
+(@COU_ID_BR,'Tocantins','TO');
 PRINT '|Add States [OK]';
-GO
 --####################
 --##                ##
 --##     Version    ##
---##     1.0.0.1    ##
+--##     1.0.0.2    ##
 --##                ##
 --####################

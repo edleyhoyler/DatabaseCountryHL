@@ -1,7 +1,6 @@
 ﻿PRINT '|Add Country Capital [  ]';
-GO
 PRINT '|$(ScriptsPath)$(FileNameCountry_Capital)';
-GO
+/*
 INSERT INTO [dbo].[COUNTRY_CAPITAL]
 (
 	[COU_ID],
@@ -251,12 +250,38 @@ VALUES
 (245, N'Pretoria'),
 (246, N'Lusaka'),
 (247, N'Harare');
-GO
+*/
+DROP TABLE IF EXISTS [dbo].[#COUNTRY_CAPITAL];
+SELECT DISTINCT 
+	 [C].[COU_ID], 
+	 [D].[Capital] [CCA_NAME] INTO [dbo].[#COUNTRY_CAPITAL] 
+FROM 
+	[dbo].[#DataSourceSQL] [D] 
+INNER JOIN 
+	[dbo].[COUNTRY]	[C] 
+ON	
+	[D].[ISO31661Alpha2] = [C].[COU_ISO31661_ALPHA2]
+WHERE 
+	[D].[Capital] IS NOT NULL
+AND	
+	[C].[COU_ID] IS NOT NULL 
+ORDER BY 
+[C].[COU_ID]; 
+INSERT INTO [dbo].[COUNTRY_CAPITAL]
+(
+	[COU_ID],
+	[CCA_NAME]
+)
+(
+SELECT
+	[C].[COU_ID],
+	[C].[CCA_NAME]
+FROM [dbo].[#COUNTRY_CAPITAL] [C]
+);
 PRINT '|Add Country Capital [OK]';
-GO
 --####################
 --##                ##
 --##     Version    ##
---##     1.0.0.1    ##
+--##     1.0.0.2    ##
 --##                ##
 --####################

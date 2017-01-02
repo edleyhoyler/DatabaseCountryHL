@@ -1,7 +1,6 @@
 ﻿PRINT '|Add Currency [  ]';
-GO
 PRINT '|$(ScriptsPath)$(FileNameCurrency)';
-GO
+/*
 INSERT INTO [dbo].[CURRENCY]
 (
 	[CUR_ISO4217_CODE],
@@ -156,12 +155,45 @@ VALUES
 (N'ZAR', N'Rand', 710),
 (N'ZMW', N'Zambian Kwacha', 967),
 (N'ZWL', N'Zimbabwe Dollar', 932);
-GO
+*/
+DROP TABLE IF EXISTS [dbo].[#CURRENCY];
+SELECT DISTINCT 
+	 [D].[ISO4217currency_alphabetic_code]	[CUR_ISO4217_CODE], 
+	 [D].[ISO4217currency_name]				[CUR_ISO4217_NAME], 
+	 [D].[ISO4217currency_numeric_code]		[CUR_ISO4217_NUMERIC] INTO [dbo].[#CURRENCY] 
+FROM 
+	[dbo].[#DataSourceSQL] [D] 
+WHERE 
+[D].[ISO4217currency_alphabetic_code] IS NOT NULL
+AND
+[D].[ISO4217currency_name] IS NOT NULL
+AND
+[D].[ISO4217currency_numeric_code] IS NOT NULL;
+UPDATE [dbo].[#CURRENCY] 
+SET 
+[CUR_ISO4217_NAME] = ('Real Brasileiro') 
+WHERE 
+[CUR_ISO4217_CODE] = ('BRL') 
+AND 
+[CUR_ISO4217_NUMERIC] = (986);
+INSERT INTO [dbo].[CURRENCY]
+(
+	[CUR_ISO4217_CODE],
+	[CUR_ISO4217_NAME],
+	[CUR_ISO4217_NUMERIC]
+)
+(
+SELECT
+	[C].[CUR_ISO4217_CODE],
+	[C].[CUR_ISO4217_NAME],
+	[C].[CUR_ISO4217_NUMERIC]
+FROM 
+[dbo].[#CURRENCY] [C]
+);
 PRINT '|Add Currency [OK]';
-GO
 --####################
 --##                ##
 --##     Version    ##
---##     1.0.0.1    ##
+--##     1.0.0.2    ##
 --##                ##
 --####################

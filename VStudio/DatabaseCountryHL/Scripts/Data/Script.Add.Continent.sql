@@ -1,7 +1,6 @@
 ﻿PRINT '|Add Continent [  ]';
-GO
 PRINT '|$(ScriptsPath)$(FileNameContinent)';
-GO
+/*
 INSERT INTO [dbo].[CONTINENT]
 (
 	[CON_NAME_EN], 
@@ -16,14 +15,35 @@ VALUES
 ('North america', 'América do Norte', 'NA'),
 ('Oceania',       'Oceânia',          'OC'),
 ('South america', 'América do Sul',   'SA');
-GO
-SELECT * FROM [dbo].[CONTINENT]; 
-GO
+*/
+DROP TABLE IF EXISTS [dbo].[#CONTINENT];
+SELECT DISTINCT 
+	[D].[CON_NAME_EN], 
+	[D].[CON_NAME_BR], 
+	[D].[CON_CODE] INTO [dbo].[#CONTINENT] 
+FROM 
+	[dbo].[#DataSourceSQL] [D] 
+WHERE 
+	[D].[CON_CODE] IS NOT NULL 
+ORDER BY 
+	[D].[CON_NAME_EN] ASC;
+INSERT INTO [dbo].[CONTINENT]
+(
+	[CON_NAME_EN],
+	[CON_NAME_BR],
+	[CON_CODE]
+)
+(
+SELECT 
+	[C].[CON_NAME_EN],
+	[C].[CON_NAME_BR],
+	[C].[CON_CODE]
+FROM [dbo].[#CONTINENT] [C]
+); 
 PRINT '|Add Continent [OK]';
-GO
 --####################
 --##                ##
 --##     Version    ##
---##     1.0.0.1    ##
+--##     1.0.0.2    ##
 --##                ##
 --####################
