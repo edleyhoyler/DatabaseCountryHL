@@ -19,7 +19,7 @@
 <br/>
 * For the people involved in the development, see: [www.hoyler.com.br](http://www.hoyler.com.br)
 <br/>
-* Email: [contato@hoyler.com.br](mailto:contato@hoyler.com.br)
+* Email: contato@hoyler.com.br
 <br/>
 
 #### Language List
