@@ -7,7 +7,7 @@
     <Name>DatabaseCountryHL</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{db9bb801-0797-4a61-9d54-34e561d57bfa}</ProjectGuid>
+    <ProjectGuid>{5afe55d5-c53c-4d28-b740-44a82032a195}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
@@ -17,76 +17,16 @@
     <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
     <GenerateCreateScript>True</GenerateCreateScript>
+    <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
     <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
-    <QueryStoreCaptureMode>All</QueryStoreCaptureMode>
-    <QueryStoreDesiredState>Off</QueryStoreDesiredState>
-    <QueryStoreFlushInterval>900</QueryStoreFlushInterval>
-    <QueryStoreStatsInterval>60</QueryStoreStatsInterval>
-    <QueryStoreMaxPlansPerQuery>200</QueryStoreMaxPlansPerQuery>
-    <QueryStoreStaleQueryThreshold>30</QueryStoreStaleQueryThreshold>
-    <QueryStoreMaxStorageSize>100</QueryStoreMaxStorageSize>
-    <DbScopedConfigLegacyCardinalityEstimation>Off</DbScopedConfigLegacyCardinalityEstimation>
-    <DbScopedConfigMaxDOP>0</DbScopedConfigMaxDOP>
-    <DbScopedConfigParameterSniffing>On</DbScopedConfigParameterSniffing>
-    <DbScopedConfigOptimizerHotfixes>Off</DbScopedConfigOptimizerHotfixes>
-    <DelayedDurability>DISABLED</DelayedDurability>
-    <AutoCreateStatisticsIncremental>False</AutoCreateStatisticsIncremental>
-    <MemoryOptimizedElevateToSnapshot>False</MemoryOptimizedElevateToSnapshot>
-    <Containment>None</Containment>
-    <IsNestedTriggersOn>True</IsNestedTriggersOn>
-    <IsTransformNoiseWordsOn>False</IsTransformNoiseWordsOn>
-    <TwoDigitYearCutoff>2049</TwoDigitYearCutoff>
-    <NonTransactedFileStreamAccess>OFF</NonTransactedFileStreamAccess>
-    <TargetRecoveryTimePeriod>60</TargetRecoveryTimePeriod>
-    <TargetRecoveryTimeUnit>SECONDS</TargetRecoveryTimeUnit>
-    <IsChangeTrackingOn>False</IsChangeTrackingOn>
-    <IsChangeTrackingAutoCleanupOn>True</IsChangeTrackingAutoCleanupOn>
-    <ChangeTrackingRetentionPeriod>2</ChangeTrackingRetentionPeriod>
-    <ChangeTrackingRetentionUnit>Days</ChangeTrackingRetentionUnit>
-    <IsEncryptionOn>False</IsEncryptionOn>
-    <IsBrokerPriorityHonored>False</IsBrokerPriorityHonored>
-    <Trustworthy>False</Trustworthy>
-    <AutoUpdateStatisticsAsynchronously>False</AutoUpdateStatisticsAsynchronously>
-    <PageVerify>CHECKSUM</PageVerify>
-    <ServiceBrokerOption>EnableBroker</ServiceBrokerOption>
-    <DateCorrelationOptimizationOn>False</DateCorrelationOptimizationOn>
-    <Parameterization>SIMPLE</Parameterization>
-    <AllowSnapshotIsolation>False</AllowSnapshotIsolation>
-    <ReadCommittedSnapshot>False</ReadCommittedSnapshot>
-    <VardecimalStorageFormatOn>True</VardecimalStorageFormatOn>
-    <SupplementalLoggingOn>False</SupplementalLoggingOn>
-    <CompatibilityMode>130</CompatibilityMode>
-    <AnsiNullDefault>True</AnsiNullDefault>
-    <AnsiNulls>True</AnsiNulls>
-    <AnsiPadding>True</AnsiPadding>
-    <AnsiWarnings>True</AnsiWarnings>
-    <ArithAbort>False</ArithAbort>
-    <ConcatNullYieldsNull>False</ConcatNullYieldsNull>
-    <QuotedIdentifier>True</QuotedIdentifier>
-    <NumericRoundAbort>False</NumericRoundAbort>
-    <RecursiveTriggersEnabled>False</RecursiveTriggersEnabled>
-    <DatabaseChaining>False</DatabaseChaining>
-    <DatabaseState>ONLINE</DatabaseState>
-    <CloseCursorOnCommitEnabled>False</CloseCursorOnCommitEnabled>
-    <DefaultCursor>GLOBAL</DefaultCursor>
-    <AutoClose>False</AutoClose>
-    <AutoCreateStatistics>True</AutoCreateStatistics>
-    <AutoShrink>False</AutoShrink>
-    <AutoUpdateStatistics>True</AutoUpdateStatistics>
-    <TornPageDetection>False</TornPageDetection>
-    <DatabaseAccess>MULTI_USER</DatabaseAccess>
-    <Recovery>SIMPLE</Recovery>
-    <EnableFullTextSearch>True</EnableFullTextSearch>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
-    <DacVersion>1.0.0.2</DacVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -123,59 +63,66 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
-    <Folder Include="Security\" />
-    <Folder Include="Schema_Compare" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="SchemaCompare" />
+    <Folder Include="Scripts" />
     <Folder Include="Snapshots" />
-    <Folder Include="Scripts\" />
     <Folder Include="Scripts\PostDeployment" />
     <Folder Include="Scripts\PreDeployment" />
-    <Folder Include="Scripts\Data" />
-    <Folder Include="dbo\Stored Procedures\" />
-    <Folder Include="dbo\Tables\" />
+    <Folder Include="Scripts\DataSource" />
+    <Folder Include="Scripts\DataSource\TempTables" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Schema_Compare\Local_DatabaseCountryHL.scmp" />
-    <None Include="Schema_Compare\Remoto_DatabaseCountryHL.scmp" />
+    <None Include="SchemaCompare\Local_DatabaseCountryHL.scmp" />
     <None Include="Snapshots\1DatabaseCountryHL_2016-11-01_23-05-25.dacpac" />
     <None Include="Snapshots\2DatabaseCountryHL_2016-11-01_23-40-27.dacpac" />
     <None Include="Snapshots\3DatabaseCountryHL_2016-11-03_21-16-43.dacpac" />
     <None Include="Snapshots\4DatabaseCountryHL_2016-11-44_00-01-19.dacpac" />
     <None Include="Snapshots\5DatabaseCountryHL_2016-12-25_04-05-07.dacpac" />
     <None Include="Snapshots\6DatabaseCountryHL_2016-12-29_16-10-34.dacpac" />
+    <None Include="Scripts\DataSource\Script.Insert.001.CONTINENTS.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.002.COUNTRYS.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.003.REGIONS.sql" />
+    <None Include="Scripts\DataSource\TempTables\Script.EstadoRegiaoBR.Temp.sql" />
+    <None Include="Scripts\DataSource\TempTables\Script.CountryNames_EN_BR.Temp.sql" />
+    <None Include="Scripts\DataSource\TempTables\Script.CidadesBR.Temp.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.004.FEDERATIONS.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.005.CITYS.sql" />
+    <None Include="Scripts\DataSource\TempTables\Script.Clean.All.TempTables.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.006.COUNTRYS_FLAGS_16X.sql" />
+    <None Include="Snapshots\DatabaseCountryHL_2018-02-02_11-56-50.dacpac" />
+    <None Include="Snapshots\DatabaseCountryHL_2018-02-04_22-59-08.dacpac" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Scripts\PostDeployment\Script.PostDeployment.sql" />
-    <None Include="Scripts\Data\Script.Add.Country.sql" />
+    <PostDeploy Include="Scripts\PostDeployment\Script.Post-Deployment.DatabaseCountryHL.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PreDeploy Include="Scripts\PreDeployment\Script.PreDeployment.sql" />
+    <PreDeploy Include="Scripts\PreDeployment\Script.Pre-Deployment.DatabaseCountryHL.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Stored Procedures\dbo.COUNTRY_CRUD.sql" />
-    <Build Include="dbo\Stored Procedures\dbo.CRUD_LIST_ARRAY_ONLY.sql" />
-    <None Include="Scripts\Data\Script.Add.Continent.sql" />
-    <None Include="Scripts\Data\Script.Add.Currency.sql" />
-    <None Include="Scripts\Data\Script.Add.Country_Currency.sql" />
-    <None Include="Scripts\Data\Script.Add.Country_Capital.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="dbo\Tables\dbo.STATES_FLAG.sql" />
-    <Build Include="dbo\Tables\dbo.STATES.sql" />
-    <Build Include="dbo\Tables\dbo.CURRENCY.sql" />
-    <Build Include="dbo\Tables\dbo.COUNTRY_FLAG.sql" />
-    <Build Include="dbo\Tables\dbo.COUNTRY_CURRENCY.sql" />
-    <Build Include="dbo\Tables\dbo.COUNTRY_CAPITAL.sql" />
-    <Build Include="dbo\Tables\dbo.COUNTRY.sql" />
-    <Build Include="dbo\Tables\dbo.CONTINENT.sql" />
-    <Build Include="dbo\Tables\dbo.CITY_FLAG.sql" />
-    <Build Include="dbo\Tables\dbo.CITY.sql" />
-    <None Include="Scripts\Data\Script.Add.States.sql" />
-    <None Include="Scripts\Data\Script.Add.City.sql" />
-    <Build Include="dbo\Tables\dbo.COUNTRY_BACEN.sql" />
-    <None Include="Scripts\Data\Script.Add.Country_Bacen.sql" />
-    <None Include="Scripts\Data\DataSource.sql" />
-    <None Include="dbo\Stored Procedures\dbo.PrintSQLResultsSQL2014.sql" />
-    <None Include="dbo\Stored Procedures\dbo.PrintSQLResultsSQL2012.sql" />
-    <None Include="dbo\Stored Procedures\dbo.PrintSQLResultsSQL2008R2.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRYS.sql" />
+    <Build Include="dbo\Tables\dbo.CONTINENTS.sql" />
+    <Build Include="dbo\Tables\dbo.REGIONS.sql" />
+    <Build Include="dbo\Tables\dbo.FEDERATIONS.sql" />
+    <Build Include="dbo\Tables\dbo.CITYS.sql" />
+    <None Include="Scripts\DataSource\TempTables\Script.CountryBacen.Temp.sql" />
+    <None Include="Scripts\DataSource\TempTables\Script.CountryCodes.Temp.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.007.COUNTRYS_FLAGS_24X.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_64X.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_48X.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_32X.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_250X.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_24X.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_16X.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_128X.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_100X.sql" />
+    <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_1000X.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.008.COUNTRYS_FLAGS_32X.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.009.COUNTRYS_FLAGS_48X.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.010.COUNTRYS_FLAGS_64X.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.011.COUNTRYS_FLAGS_100X.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.012.COUNTRYS_FLAGS_128X.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.013.COUNTRYS_FLAGS_250X.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.014.COUNTRYS_FLAGS_1000X.sql" />
   </ItemGroup>
 </Project>
