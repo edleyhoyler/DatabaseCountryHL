@@ -4,7 +4,7 @@
 #### Database for All Country
 <br/>
 
-![World.Flags.small.png](https://github.com/edleyrocha/DatabaseCountryHL/blob/master/World.Flags.Small.png)
+![World.Flags.Small.png](https://github.com/edleyrocha/DatabaseCountryHL/blob/master/World.Flags.Small.png)
 
 <br/>
 
