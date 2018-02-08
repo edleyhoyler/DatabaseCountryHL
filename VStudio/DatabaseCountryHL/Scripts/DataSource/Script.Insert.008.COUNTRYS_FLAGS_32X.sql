@@ -10,7 +10,7 @@ PRINT '|$(Source)$(COUNTRYS_FLAGS_32X)';
 --DECLARE @COUNT INT;
 SET     @COUNT = 0;
 --DECLARE @PATCH VARCHAR(1000);
-SET     @PATCH = ('D:\GIT\DatabaseCountryHL\Flags\32x32\');
+SET     @PATCH = ('D:\GIT\DatabaseCountryHL\VStudio\ProjectDatabaseCountryHL\DatabaseCountryHL\Flags\32x32\');
 --DECLARE @FILE                VARCHAR(1000);
 --DECLARE @FILE_PATCH          VARCHAR(1000);
 --DECLARE @COU_ISO31661_ALPHA2 CHAR(2);

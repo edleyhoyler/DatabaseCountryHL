@@ -13,13 +13,14 @@ PRINT '';
 PRINT ' __________________________________________ ';
 PRINT '|------------ Post-Deployment [  ]';
 
-:SETVAR temp  "..\DataSource\TempTables\"
-:SETVAR T1    "Script.CountryBacen.Temp.sql"
-:SETVAR T2    "Script.CountryCodes.Temp.sql"
-:SETVAR T3    "Script.CountryNames_EN_BR.Temp.sql"
-:SETVAR T4    "Script.EstadoRegiaoBR.Temp.sql"
-:SETVAR T5    "Script.CidadesBR.Temp.sql"
-:SETVAR T6    "Script.Clean.All.TempTables.sql"
+:SETVAR temp						"..\DataSource\TempTables\"
+:SETVAR CleanAllTempTables			"Script.Clean.All.TempTables.sql"
+:SETVAR T1							"Script.CountryBacen.Temp.sql"
+:SETVAR T2							"Script.CountryCodes.Temp.sql"
+:SETVAR T3							"Script.CountryNames_EN_BR.Temp.sql"
+:SETVAR T4							"Script.EstadoRegiaoBR.Temp.sql"
+:SETVAR T5							"Script.CidadesBR.Temp.sql"
+
 
 :r $(temp)$(T1)
 :r $(temp)$(T2)
@@ -59,7 +60,7 @@ PRINT '|------------ Post-Deployment [  ]';
 :r $(Source)$(COUNTRYS_FLAGS_250X)
 :r $(Source)$(COUNTRYS_FLAGS_1000X)
 
-:r $(temp)$(T6)
+:r $(temp)$(CleanAllTempTables)
 
 PRINT '|------------ Post-Deployment [OK]';
 PRINT ' __________________________________________ ';

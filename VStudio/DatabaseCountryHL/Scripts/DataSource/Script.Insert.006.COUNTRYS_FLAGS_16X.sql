@@ -10,7 +10,7 @@ DECLARE @COF_FILE_HASH_MD5  VARCHAR (50);
 DECLARE @COUNT INT;
 SET     @COUNT = 0;
 DECLARE @PATCH VARCHAR(1000);
-SET     @PATCH = ('D:\GIT\DatabaseCountryHL\Flags\16x16\');
+SET     @PATCH = ('D:\GIT\DatabaseCountryHL\VStudio\ProjectDatabaseCountryHL\DatabaseCountryHL\Flags\16x16\');
 DECLARE @FILE                VARCHAR(1000);
 DECLARE @FILE_PATCH          VARCHAR(1000);
 DECLARE @COU_ISO31661_ALPHA2 CHAR(2);
