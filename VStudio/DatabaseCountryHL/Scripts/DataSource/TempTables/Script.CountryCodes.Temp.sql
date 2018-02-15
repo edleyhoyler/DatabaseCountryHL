@@ -1,4 +1,5 @@
-﻿CREATE TABLE [CountryCodes]
+﻿DROP TABLE IF EXISTS [CountryCodes];
+CREATE TABLE [CountryCodes]
 (
 	official_name_en                          TEXT,
 	official_name_es                          TEXT,

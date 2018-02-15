@@ -1,7 +1,7 @@
 /*==============================================================*/
 /* Database name:  DATABASECOUNTRYHL                            */
 /* DBMS name:      Microsoft SQL Server 2016                    */
-/* Created on:     02/02/2018 11:30:28                          */
+/* Created on:     15/02/2018 11:53:48                          */
 /*==============================================================*/
 
 
@@ -37,9 +37,9 @@ create table CITYS (
    CIT_ID               int                  identity,
    FED_ID               int                  not null,
    CIT_NAME             varchar(100)         not null,
-   CID_IBGE_CODE        varchar(10)          not null,
-   CIT_IBGE_LONGITUDE   varchar(10)          not null,
-   CIT_IBGE_LATITUDE    varchar(10)          not null
+   CID_CODE             varchar(10)          not null,
+   CIT_LATITUDE         varchar(10)          not null,
+   CIT_LONGITUDE        varchar(10)          not null
 )
 go
 
@@ -65,7 +65,7 @@ go
 
 
 create nonclustered index CITYS_UK on CITYS (CIT_NAME ASC,
-  CID_IBGE_CODE ASC)
+  CID_CODE ASC)
 go
 
 /*==============================================================*/
@@ -106,7 +106,9 @@ create table COUNTRYS (
    COU_ISO31661_ALPHA2  char(2)              not null,
    COU_ISO31661_ALPHA3  char(3)              not null,
    COU_ISO31661_NUMBER  varchar(3)           not null,
-   COU_BACEN_CODE       varchar(5)           not null
+   COU_BACEN_CODE       varchar(5)           not null,
+   COU_LATITUDE         varchar(10)          not null,
+   COU_LONGITUDE        varchar(10)          not null
 )
 go
 

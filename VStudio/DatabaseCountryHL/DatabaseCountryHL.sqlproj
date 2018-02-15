@@ -84,12 +84,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="SchemaCompare\Local_DatabaseCountryHL.scmp" />
-    <None Include="Snapshots\1DatabaseCountryHL_2016-11-01_23-05-25.dacpac" />
-    <None Include="Snapshots\2DatabaseCountryHL_2016-11-01_23-40-27.dacpac" />
-    <None Include="Snapshots\3DatabaseCountryHL_2016-11-03_21-16-43.dacpac" />
-    <None Include="Snapshots\4DatabaseCountryHL_2016-11-44_00-01-19.dacpac" />
-    <None Include="Snapshots\5DatabaseCountryHL_2016-12-25_04-05-07.dacpac" />
-    <None Include="Snapshots\6DatabaseCountryHL_2016-12-29_16-10-34.dacpac" />
+    <None Include="Snapshots\DatabaseCountryHL_2016-11-01_23-05-25.dacpac" />
+    <None Include="Snapshots\DatabaseCountryHL_2016-11-01_23-40-27.dacpac" />
+    <None Include="Snapshots\DatabaseCountryHL_2016-11-03_21-16-43.dacpac" />
+    <None Include="Snapshots\DatabaseCountryHL_2016-11-44_00-01-19.dacpac" />
+    <None Include="Snapshots\DatabaseCountryHL_2016-12-25_04-05-07.dacpac" />
+    <None Include="Snapshots\DatabaseCountryHL_2016-12-29_16-10-34.dacpac" />
     <None Include="Scripts\DataSource\Script.Insert.001.CONTINENTS.sql" />
     <None Include="Scripts\DataSource\Script.Insert.002.COUNTRYS.sql" />
     <None Include="Scripts\DataSource\Script.Insert.003.REGIONS.sql" />
@@ -2371,6 +2371,8 @@
     <None Include="Flags\1000x\zm.png" />
     <None Include="Flags\1000x\zw.png" />
     <None Include="Snapshots\DatabaseCountryHL_2018-02-07_22-10-48.dacpac" />
+    <None Include="Scripts\DataSource\TempTables\Script.CountriesCoordinates.sql" />
+    <None Include="Snapshots\DatabaseCountryHL_2018-02-15_12-42-50.dacpac" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\PostDeployment\Script.Post-Deployment.DatabaseCountryHL.sql" />

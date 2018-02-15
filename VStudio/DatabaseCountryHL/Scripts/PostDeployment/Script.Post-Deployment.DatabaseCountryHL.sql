@@ -20,14 +20,14 @@ PRINT '|------------ Post-Deployment [  ]';
 :SETVAR T3							"Script.CountryNames_EN_BR.Temp.sql"
 :SETVAR T4							"Script.EstadoRegiaoBR.Temp.sql"
 :SETVAR T5							"Script.CidadesBR.Temp.sql"
-
+:SETVAR T6							"Script.CountriesCoordinates.sql"
 
 :r $(temp)$(T1)
 :r $(temp)$(T2)
 :r $(temp)$(T3)
 :r $(temp)$(T4)
 :r $(temp)$(T5)
-
+:r $(temp)$(T6)
 
 :SETVAR Source "..\DataSource\"
 :SETVAR CONTINENTS                "Script.Insert.001.CONTINENTS.sql"
@@ -68,6 +68,6 @@ PRINT '';
 --####################
 --##                ##
 --##     Version    ##
---##     1.0.0.1    ##
+--##     1.0.0.2    ##
 --##     BY  EDY    ##
 --####################

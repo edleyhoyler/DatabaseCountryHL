@@ -1,4 +1,5 @@
-﻿CREATE TABLE CidadesBR
+﻿DROP TABLE IF EXISTS [CidadesBR];
+CREATE TABLE [CidadesBR]
 (
   Codigo_IBGE INT,
   Cidade_NOME VARCHAR(100),

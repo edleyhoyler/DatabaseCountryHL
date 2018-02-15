@@ -1,4 +1,5 @@
-﻿CREATE TABLE EstadoRegiaoBR
+﻿DROP TABLE IF EXISTS [EstadoRegiaoBR];
+CREATE TABLE [EstadoRegiaoBR]
 (
   Id         INT         NOT NULL,
   CodigoUf   INT         NOT NULL,
