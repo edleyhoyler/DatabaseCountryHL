@@ -12,7 +12,7 @@ Post-Deployment Script Template
 PRINT '';
 PRINT '==================================';
 PRINT '===-------Post-Deployment-[  ]-===';
-
+PRINT '==================================';
 :SETVAR temp						"..\DataSource\TempTables\"
 :SETVAR CleanAllTempTables			"Script.Clean.All.TempTables.sql"
 :SETVAR T1							"Script.CountryBacen.Temp.sql"
@@ -62,7 +62,7 @@ PRINT '===-------Post-Deployment-[  ]-===';
 :r $(Source)$(COUNTRYS_FLAGS_1000X)
 
 :r $(temp)$(CleanAllTempTables)
-
+PRINT '==================================';
 PRINT '===-------Post-Deployment-[OK]-===';
 PRINT '==================================';
 PRINT '';

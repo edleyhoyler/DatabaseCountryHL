@@ -2376,6 +2376,7 @@
     <None Include="Scripts\DataSource\TempTables\Script.CountriesCoordinates.sql" />
     <None Include="Snapshots\DatabaseCountryHL_2018-02-15_12-42-50.dacpac" />
     <None Include="Snapshots\DatabaseCountryHL_2019-03-13_08-22-13.dacpac" />
+    <None Include="Snapshots\DatabaseCountryHL_2019-03-13_10-13-25.dacpac" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\PostDeployment\Script.Post-Deployment.DatabaseCountryHL.sql" />
@@ -2417,7 +2418,7 @@
   </ItemGroup>
   <ItemGroup>
     <SqlCmdVariable Include="DefaultProjectPath">
-      <DefaultValue>D:\DEV\DatabaseCountryHL\VStudio\DatabaseCountryHL\</DefaultValue>
+      <DefaultValue>D:\DEV\DatabaseCountryHL\Visual Studio 2015\DatabaseCountryHL\</DefaultValue>
       <Value>$(SqlCmdVar__1)</Value>
     </SqlCmdVariable>
   </ItemGroup>
