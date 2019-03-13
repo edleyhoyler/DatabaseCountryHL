@@ -10,7 +10,7 @@ PRINT '|$(Source)$(COUNTRYS_FLAGS_64X)';
 --DECLARE @COUNT INT;
 SET     @COUNT = 0;
 --DECLARE @PATCH VARCHAR(1000);
-SET     @PATCH = ('D:\GIT\DatabaseCountryHL\VStudio\ProjectDatabaseCountryHL\DatabaseCountryHL\Flags\64x64\');
+SET     @PATCH = ('$(DefaultProjectPath)\Flags\64x\');
 --DECLARE @FILE                VARCHAR(1000);
 --DECLARE @FILE_PATCH          VARCHAR(1000);
 --DECLARE @COU_ISO31661_ALPHA2 CHAR(2);
@@ -80,7 +80,7 @@ PRINT '|Add COUNTRYS_FLAGS_64X [OK]';
 --####################
 --##                ##
 --##     Version    ##
---##     1.0.0.1    ##
+--##     2.0.0.4    ##
 --##     BY  EDY    ##
 --##                ##
 --####################

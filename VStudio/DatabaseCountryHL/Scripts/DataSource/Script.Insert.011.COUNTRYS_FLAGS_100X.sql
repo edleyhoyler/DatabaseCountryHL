@@ -10,7 +10,7 @@ PRINT '|$(Source)$(COUNTRYS_FLAGS_100X)';
 --DECLARE @COUNT INT;
 SET     @COUNT = 0;
 --DECLARE @PATCH VARCHAR(1000);
-SET     @PATCH = ('D:\GIT\DatabaseCountryHL\VStudio\ProjectDatabaseCountryHL\DatabaseCountryHL\Flags\100x\');
+SET     @PATCH = ('$(DefaultProjectPath)\Flags\100x\');
 --DECLARE @FILE                VARCHAR(1000);
 --DECLARE @FILE_PATCH          VARCHAR(1000);
 --DECLARE @COU_ISO31661_ALPHA2 CHAR(2);
@@ -80,7 +80,7 @@ PRINT '|Add COUNTRYS_FLAGS_100X [OK]';
 --####################
 --##                ##
 --##     Version    ##
---##     1.0.0.1    ##
+--##     2.0.0.4    ##
 --##     BY  EDY    ##
 --##                ##
 --####################

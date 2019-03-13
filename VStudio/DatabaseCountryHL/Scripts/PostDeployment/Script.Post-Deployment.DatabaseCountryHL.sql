@@ -10,8 +10,8 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 PRINT '';
-PRINT ' __________________________________________ ';
-PRINT '|------------ Post-Deployment [  ]';
+PRINT '==================================';
+PRINT '===-------Post-Deployment-[  ]-===';
 
 :SETVAR temp						"..\DataSource\TempTables\"
 :SETVAR CleanAllTempTables			"Script.Clean.All.TempTables.sql"
@@ -50,6 +50,7 @@ PRINT '|------------ Post-Deployment [  ]';
 :r $(Source)$(REGIONS)
 :r $(Source)$(FEDERATIONS)
 :r $(Source)$(CITYS)
+
 :r $(Source)$(COUNTRYS_FLAGS_16X)
 :r $(Source)$(COUNTRYS_FLAGS_24X)
 :r $(Source)$(COUNTRYS_FLAGS_32X)
@@ -62,12 +63,12 @@ PRINT '|------------ Post-Deployment [  ]';
 
 :r $(temp)$(CleanAllTempTables)
 
-PRINT '|------------ Post-Deployment [OK]';
-PRINT ' __________________________________________ ';
+PRINT '===-------Post-Deployment-[OK]-===';
+PRINT '==================================';
 PRINT '';
 --####################
 --##                ##
 --##     Version    ##
---##     1.0.0.2    ##
+--##     2.0.0.4    ##
 --##     BY  EDY    ##
 --####################

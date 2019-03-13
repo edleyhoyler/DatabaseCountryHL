@@ -262,8 +262,6 @@ VALUES
 ('ZA', 'South Africa', 'África do Sul'),
 ('ZM', 'Zambia', 'Zâmbia'),
 ('ZW', 'Zimbabwe', 'Zimbábue');
-
-
 DROP TABLE IF EXISTS [CountryNames_EN_BR];
 CREATE TABLE [CountryNames_EN_BR] (
   [NUM] int,
@@ -272,7 +270,6 @@ CREATE TABLE [CountryNames_EN_BR] (
   [ALPHA2] char(2),
   [ALPHA3] char(3)
 );
-
 INSERT INTO [CountryNames_EN_BR]([NUM], [NAME_EN], [NAME_BR], [ALPHA2], [ALPHA3]) VALUES (4, 'Afghanistan', 'Afeganistão', 'af', 'afg');
 INSERT INTO [CountryNames_EN_BR]([NUM], [NAME_EN], [NAME_BR], [ALPHA2], [ALPHA3]) VALUES (248, 'Åland Islands', 'Ilhas Åland', 'ax', 'ala');
 INSERT INTO [CountryNames_EN_BR]([NUM], [NAME_EN], [NAME_BR], [ALPHA2], [ALPHA3]) VALUES (8, 'Albania', 'Albânia', 'al', 'alb');
@@ -522,14 +519,3 @@ INSERT INTO [CountryNames_EN_BR]([NUM], [NAME_EN], [NAME_BR], [ALPHA2], [ALPHA3]
 INSERT INTO [CountryNames_EN_BR]([NUM], [NAME_EN], [NAME_BR], [ALPHA2], [ALPHA3]) VALUES (887, 'Yemen', 'Iêmen', 'ye', 'yem');
 INSERT INTO [CountryNames_EN_BR]([NUM], [NAME_EN], [NAME_BR], [ALPHA2], [ALPHA3]) VALUES (894, 'Zambia', 'Zâmbia', 'zm', 'zmb');
 INSERT INTO [CountryNames_EN_BR]([NUM], [NAME_EN], [NAME_BR], [ALPHA2], [ALPHA3]) VALUES (716, 'Zimbabwe', 'Zimbabwe', 'zw', 'zwe');
-
-
-
-
-
-
-
-
-
-
-

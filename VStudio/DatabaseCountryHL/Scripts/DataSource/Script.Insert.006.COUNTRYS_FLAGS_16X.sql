@@ -10,7 +10,7 @@ DECLARE @COF_FILE_HASH_MD5  VARCHAR (50);
 DECLARE @COUNT INT;
 SET     @COUNT = 0;
 DECLARE @PATCH VARCHAR(1000);
-SET     @PATCH = ('D:\GIT\DatabaseCountryHL\VStudio\ProjectDatabaseCountryHL\DatabaseCountryHL\Flags\16x16\');
+SET     @PATCH = ('$(DefaultProjectPath)\Flags\16x\');
 DECLARE @FILE                VARCHAR(1000);
 DECLARE @FILE_PATCH          VARCHAR(1000);
 DECLARE @COU_ISO31661_ALPHA2 CHAR(2);
@@ -67,7 +67,8 @@ WHILE (@@FETCH_STATUS = 0)
          END
       ELSE
         BEGIN
-          PRINT (CAST(@COU_ISO31661_ALPHA2 AS VARCHAR (2)) + '.PNG - NAO EXISTE')
+			PRINT (CAST(@COU_ISO31661_ALPHA2 AS VARCHAR (2)) + '.PNG - NAO EXISTE');
+			PRINT @FILE_PATCH
         END
 
   FETCH NEXT FROM @COUNTRYS_CURSOR INTO @COU_ISO31661_ALPHA2;
@@ -81,7 +82,7 @@ PRINT '|Add COUNTRYS_FLAGS_16X [OK]';
 --####################
 --##                ##
 --##     Version    ##
---##     1.0.0.1    ##
+--##     2.0.0.3    ##
 --##     BY  EDY    ##
 --##                ##
 --####################
