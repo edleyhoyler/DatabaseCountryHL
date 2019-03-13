@@ -9,8 +9,9 @@
 <br/>
 
 #### IDE
-* Visual Studio 2015 Update 3 (Trial) - Project Database Code
-* SAP PowerDesigner 16.6 SP06 (Trial) - Project Database Visual
+* Visual Studio 2015 Update 3 (Trial) - Project Database [CODE]
+* SAP PowerDesigner 16.6 SP06 (Trial) - Project Database [VISUAL]
+* SQL Server 2016 Enterprise (Trial) - Project Database [DATA]
 
 <br/>
 
