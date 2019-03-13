@@ -4,7 +4,7 @@
 #### Database for All Country World
 <br/>
 
-![World.Flags.Small.png](https://github.com/edleyrocha/DatabaseCountryHL/blob/master/World.Flags.Small.png)
+![World Flags.png](https://i.imgur.com/S02xEN1.png)
 
 <br/>
 
