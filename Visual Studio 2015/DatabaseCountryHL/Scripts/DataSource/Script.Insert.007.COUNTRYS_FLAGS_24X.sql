@@ -1,5 +1,5 @@
 ﻿PRINT '|Add COUNTRYS_FLAGS_24X [  ]';
-PRINT '|$(Source)$(COUNTRYS_FLAGS_24X)';
+PRINT '|$(DataSource)$(COUNTRYS_FLAGS_24X)';
 
 --DECLARE @COU_ID               INT;
 --DECLARE @COF_FILE_BYTE      VARBINARY(MAX);

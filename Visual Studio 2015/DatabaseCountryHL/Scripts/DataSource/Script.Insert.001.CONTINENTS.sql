@@ -1,5 +1,5 @@
 ﻿PRINT '|Add CONTINENTS [  ]';
-PRINT '|$(Source)$(CONTINENTS)';
+PRINT '|$(DataSource)$(CONTINENTS)';
 INSERT INTO [dbo].[CONTINENTS]
 (
 	[CON_NAME_EN], 

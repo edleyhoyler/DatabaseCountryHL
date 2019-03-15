@@ -1,5 +1,5 @@
 ﻿PRINT '|Add CITYS [  ]';
-PRINT '|$(Source)$(CITYS)';
+PRINT '|$(DataSource)$(CITYS)';
 INSERT INTO [CITYS]
 (
   [FED_ID],

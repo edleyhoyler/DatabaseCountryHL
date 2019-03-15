@@ -1,5 +1,5 @@
 ﻿PRINT '|Add COUNTRYS [  ]';
-PRINT '|$(Source)$(COUNTRYS)';
+PRINT '|$(DataSource)$(COUNTRYS)';
 INSERT INTO [COUNTRYS]
 (
   [CON_ID],

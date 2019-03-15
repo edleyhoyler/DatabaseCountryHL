@@ -1,5 +1,5 @@
 ﻿PRINT '|Add FEDERATIONS [  ]';
-PRINT '|$(Source)$(FEDERATIONS)';
+PRINT '|$(DataSource)$(FEDERATIONS)';
 INSERT INTO [FEDERATIONS]
 (
 [COU_ID],

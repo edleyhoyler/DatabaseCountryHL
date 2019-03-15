@@ -13,8 +13,8 @@ PRINT '';
 PRINT '==================================';
 PRINT '===-------Post-Deployment-[  ]-===';
 PRINT '==================================';
-:SETVAR temp						"..\DataSource\TempTables\"
-:SETVAR CleanAllTempTables			"Script.Clean.All.TempTables.sql"
+:SETVAR TempTables					"..\DataSource\TempTables\"
+:SETVAR T0							"Script.Clean.All.TempTables.sql"
 :SETVAR T1							"Script.CountryBacen.Temp.sql"
 :SETVAR T2							"Script.CountryCodes.Temp.sql"
 :SETVAR T3							"Script.CountryNames_EN_BR.Temp.sql"
@@ -22,14 +22,14 @@ PRINT '==================================';
 :SETVAR T5							"Script.CidadesBR.Temp.sql"
 :SETVAR T6							"Script.CountriesCoordinates.sql"
 
-:r $(temp)$(T1)
-:r $(temp)$(T2)
-:r $(temp)$(T3)
-:r $(temp)$(T4)
-:r $(temp)$(T5)
-:r $(temp)$(T6)
+:r $(TempTables)$(T1)
+:r $(TempTables)$(T2)
+:r $(TempTables)$(T3)
+:r $(TempTables)$(T4)
+:r $(TempTables)$(T5)
+:r $(TempTables)$(T6)
 
-:SETVAR Source "..\DataSource\"
+:SETVAR DataSource				  "..\DataSource\"
 :SETVAR CONTINENTS                "Script.Insert.001.CONTINENTS.sql"
 :SETVAR COUNTRYS                  "Script.Insert.002.COUNTRYS.sql"
 :SETVAR REGIONS                   "Script.Insert.003.REGIONS.sql"
@@ -45,23 +45,23 @@ PRINT '==================================';
 :SETVAR COUNTRYS_FLAGS_250x       "Script.Insert.013.COUNTRYS_FLAGS_250X.sql"
 :SETVAR COUNTRYS_FLAGS_1000X      "Script.Insert.014.COUNTRYS_FLAGS_1000X.sql"
 
-:r $(Source)$(CONTINENTS)
-:r $(Source)$(COUNTRYS)
-:r $(Source)$(REGIONS)
-:r $(Source)$(FEDERATIONS)
-:r $(Source)$(CITYS)
+:r $(DataSource)$(CONTINENTS)
+:r $(DataSource)$(COUNTRYS)
+:r $(DataSource)$(REGIONS)
+:r $(DataSource)$(FEDERATIONS)
+:r $(DataSource)$(CITYS)
 
-:r $(Source)$(COUNTRYS_FLAGS_16X)
-:r $(Source)$(COUNTRYS_FLAGS_24X)
-:r $(Source)$(COUNTRYS_FLAGS_32X)
-:r $(Source)$(COUNTRYS_FLAGS_48X)
-:r $(Source)$(COUNTRYS_FLAGS_64X)
-:r $(Source)$(COUNTRYS_FLAGS_100X)
-:r $(Source)$(COUNTRYS_FLAGS_128X)
-:r $(Source)$(COUNTRYS_FLAGS_250X)
-:r $(Source)$(COUNTRYS_FLAGS_1000X)
+:r $(DataSource)$(COUNTRYS_FLAGS_16X)
+:r $(DataSource)$(COUNTRYS_FLAGS_24X)
+:r $(DataSource)$(COUNTRYS_FLAGS_32X)
+:r $(DataSource)$(COUNTRYS_FLAGS_48X)
+:r $(DataSource)$(COUNTRYS_FLAGS_64X)
+:r $(DataSource)$(COUNTRYS_FLAGS_100X)
+:r $(DataSource)$(COUNTRYS_FLAGS_128X)
+:r $(DataSource)$(COUNTRYS_FLAGS_250X)
+:r $(DataSource)$(COUNTRYS_FLAGS_1000X)
 
-:r $(temp)$(CleanAllTempTables)
+:r $(TempTables)$(T0)
 PRINT '==================================';
 PRINT '===-------Post-Deployment-[OK]-===';
 PRINT '==================================';

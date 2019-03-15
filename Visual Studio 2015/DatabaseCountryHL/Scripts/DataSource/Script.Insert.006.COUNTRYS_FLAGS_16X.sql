@@ -1,5 +1,5 @@
 ﻿PRINT '|Add COUNTRYS_FLAGS_16X [  ]';
-PRINT '|$(Source)$(COUNTRYS_FLAGS_16X)';
+PRINT '|$(DataSource)$(COUNTRYS_FLAGS_16X)';
 
 DECLARE @COU_ID             INT;
 DECLARE @COF_FILE_BYTE      VARBINARY(MAX);
@@ -35,8 +35,9 @@ WHILE (@@FETCH_STATUS = 0)
            SET @COU_ID = (SELECT [C].[COU_ID] FROM [COUNTRYS] [C] WHERE [C].[COU_ISO31661_ALPHA2] = @COU_ISO31661_ALPHA2);
 
            DECLARE @SQL VARCHAR(1000);
-           SET @SQL = ('DROP TABLE IF EXISTS FLAG_BINARY;');
-           SET @SQL = (@SQL  + 'SELECT * INTO FLAG_BINARY FROM OPENROWSET(BULK ''');
+           
+		   DROP TABLE IF EXISTS FLAG_BINARY;
+           SET @SQL = ('SELECT * INTO FLAG_BINARY FROM OPENROWSET(BULK ''');
            SET @SQL = (@SQL  +  @FILE_PATCH)
            SET @SQL = (@SQL  + ''', SINGLE_BLOB) AS [myFile];');
            EXECUTE (@SQL);
@@ -67,14 +68,14 @@ WHILE (@@FETCH_STATUS = 0)
          END
       ELSE
         BEGIN
-			PRINT (CAST(@COU_ISO31661_ALPHA2 AS VARCHAR (2)) + '.PNG - NAO EXISTE');
+			PRINT '| '  + (CAST(@COU_ISO31661_ALPHA2 AS VARCHAR (2)) + '.PNG - NAO EXISTE');
 			PRINT @FILE_PATCH
         END
 
   FETCH NEXT FROM @COUNTRYS_CURSOR INTO @COU_ISO31661_ALPHA2;
 
   END
-  PRINT CAST(@COUNT AS VARCHAR(5));
+  PRINT '|TOTAL: '  + CAST(@COUNT AS VARCHAR(5));
 CLOSE @COUNTRYS_CURSOR;
 DEALLOCATE @COUNTRYS_CURSOR;
 
@@ -82,7 +83,7 @@ PRINT '|Add COUNTRYS_FLAGS_16X [OK]';
 --####################
 --##                ##
 --##     Version    ##
---##     2.0.0.3    ##
+--##     2.0.0.4    ##
 --##     BY  EDY    ##
 --##                ##
 --####################
