@@ -1,12 +1,12 @@
-﻿DROP TABLE IF EXISTS [CountryBacen];
-CREATE TABLE [CountryBacen](
+﻿DROP TABLE IF EXISTS [#CountryBacen];
+CREATE TABLE [#CountryBacen](
 [SL_ID]      int         NOT NULL PRIMARY KEY,
 [SL_NOME]    varchar(60) NOT NULL,
 [SL_NOME_PT] varchar(60) NOT NULL,
 [SL_SIGLA]   char(2)     DEFAULT NULL,
 [SL_BACEN]   int         NOT NULL
 );
-INSERT INTO [CountryBacen]
+INSERT INTO [#CountryBacen]
 (
 [SL_ID] ,
 [SL_NOME],

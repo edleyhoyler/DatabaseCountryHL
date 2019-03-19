@@ -19,7 +19,7 @@ INSERT INTO [CITYS]
   (CONVERT(VARCHAR(10),
   [C].[Longitude]))   [CIT_LONGITUDE]
   FROM [FEDERATIONS] [F]
-  INNER JOIN    [CidadesBR]   [C]
+  INNER JOIN    [#CidadesBR]   [C]
   ON [F].[FED_UF] =   [C].[Sigla_UF]
 );
 PRINT '|Add CITYS [OK]';

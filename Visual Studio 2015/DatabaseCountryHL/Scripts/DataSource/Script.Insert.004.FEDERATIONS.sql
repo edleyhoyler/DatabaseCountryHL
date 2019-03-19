@@ -19,7 +19,7 @@ INSERT INTO [FEDERATIONS]
          [E].[Nome]     [FED_NAME],
          [E].[Uf]       [FED_UF],
          [E].[CodigoUf] [FED_IBGE_CODE]
-      FROM             [EstadoRegiaoBR] [E]
+      FROM             [#EstadoRegiaoBR] [E]
       INNER JOIN       [REGIONS]        [R]
       ON [E].[NomeRegiao] = [R].[REG_NAME]
   );

@@ -1,5 +1,5 @@
-﻿DROP TABLE IF EXISTS [CountryCodes];
-CREATE TABLE [CountryCodes]
+﻿DROP TABLE IF EXISTS [#CountryCodes];
+CREATE TABLE [#CountryCodes]
 (
 	official_name_en                          TEXT,
 	official_name_es                          TEXT,
@@ -44,7 +44,7 @@ CREATE TABLE [CountryCodes]
 	is_independent                            TEXT
 );
 
-INSERT INTO CountryCodes (official_name_en, official_name_es, official_name_fr, [ISO3166-1-Alpha-2], [ISO3166-1-Alpha-3], [ISO3166-1-numeric], [ISO4217-currency_alphabetic_code], [ISO4217-currency_country_name], [ISO4217-currency_minor_unit], [ISO4217-currency_name], [ISO4217-currency_numeric_code], M49, [CLDR display name], Capital, Continent, DS, [Developed / Developing Countries], Dial, EDGAR, FIFA, FIPS, GAUL, [Geoname ID], [Global Code], [Global Name], IOC, ITU, [Intermediate Region Code], [Intermediate Region Name], [Land Locked Developing Countries (LLDC)], Languages, [Least Developed Countries (LDC)], MARC, [Region Code], [Region Name], [Small Island Developing States (SIDS)], [Sub-region Code], [Sub-region Name], TLD, WMO, is_independent) 
+INSERT INTO [#CountryCodes] (official_name_en, official_name_es, official_name_fr, [ISO3166-1-Alpha-2], [ISO3166-1-Alpha-3], [ISO3166-1-numeric], [ISO4217-currency_alphabetic_code], [ISO4217-currency_country_name], [ISO4217-currency_minor_unit], [ISO4217-currency_name], [ISO4217-currency_numeric_code], M49, [CLDR display name], Capital, Continent, DS, [Developed / Developing Countries], Dial, EDGAR, FIFA, FIPS, GAUL, [Geoname ID], [Global Code], [Global Name], IOC, ITU, [Intermediate Region Code], [Intermediate Region Name], [Land Locked Developing Countries (LLDC)], Languages, [Least Developed Countries (LDC)], MARC, [Region Code], [Region Name], [Small Island Developing States (SIDS)], [Sub-region Code], [Sub-region Name], TLD, WMO, is_independent) 
 VALUES
 ('', '', '', 'TW', 'TWN', '158', '', '', '', '', '', '', 'Taiwan', 'Taipei', 'AS', 'RC', '', '886', '', 'TPE', 'TW', '925', '1668284', '', '', 'TPE', ' ', '', '', '', 'zh-TW,zh,nan,hak', '', 'ch', '', '', '', '', '', '.tw', ' ', 'Yes'),
 ('Afghanistan', 'Afganistán', 'Afghanistan', 'AF', 'AFG', '004', 'AFN', 'AFGHANISTAN', '2', 'Afghani', '971', '004', 'Afghanistan', 'Kabul', 'AS', 'AFG', 'Developing', '93', 'B2', 'AFG', 'AF', '1', '1149361', 'True', 'World', 'AFG', 'AFG', '', '', 'x', 'fa-AF,ps,uz-AF,tk', 'x', 'af', '142', 'Asia', '', '34', 'Southern Asia', '.af', 'AF', 'Yes'),

@@ -1,5 +1,5 @@
-﻿DROP TABLE IF EXISTS [EstadoRegiaoBR];
-CREATE TABLE [EstadoRegiaoBR]
+﻿DROP TABLE IF EXISTS [#EstadoRegiaoBR];
+CREATE TABLE [#EstadoRegiaoBR]
 (
   Id         INT         NOT NULL,
   CodigoUf   INT         NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE [EstadoRegiaoBR]
   IdRegiao   INT         NOT NULL,
   NomeRegiao VARCHAR(50) NOT NULL
 );
-INSERT INTO EstadoRegiaoBR (Id, CodigoUf, Nome, Uf, Regiao, IdRegiao, NomeRegiao)
+INSERT INTO [#EstadoRegiaoBR] (Id, CodigoUf, Nome, Uf, Regiao, IdRegiao, NomeRegiao)
 VALUES 
 (1, 12, 'Acre', 'AC', 1, 1, 'Norte'),
 (2, 27, 'Alagoas', 'AL', 2, 2, 'Nordeste'),

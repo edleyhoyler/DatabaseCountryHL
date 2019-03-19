@@ -101,7 +101,6 @@
     <None Include="Scripts\DataSource\Script.Insert.004.FEDERATIONS.sql" />
     <None Include="Scripts\DataSource\Script.Insert.005.CITYS.sql" />
     <None Include="Scripts\DataSource\TempTables\Script.Clean.All.TempTables.sql" />
-    <None Include="Scripts\DataSource\Script.Insert.006.COUNTRYS_FLAGS_16X.sql" />
     <None Include="Snapshots\DatabaseCountryHL_2018-02-02_11-56-50.dacpac" />
     <None Include="Snapshots\DatabaseCountryHL_2018-02-04_22-59-08.dacpac" />
     <None Include="Flags\16x\ad.png" />
@@ -2392,7 +2391,6 @@
     <Build Include="dbo\Tables\dbo.CITYS.sql" />
     <None Include="Scripts\DataSource\TempTables\Script.CountryBacen.Temp.sql" />
     <None Include="Scripts\DataSource\TempTables\Script.CountryCodes.Temp.sql" />
-    <None Include="Scripts\DataSource\Script.Insert.007.COUNTRYS_FLAGS_24X.sql" />
     <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_64X.sql" />
     <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_48X.sql" />
     <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_32X.sql" />
@@ -2402,13 +2400,8 @@
     <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_128X.sql" />
     <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_100X.sql" />
     <Build Include="dbo\Tables\dbo.COUNTRYS_FLAGS_1000X.sql" />
-    <None Include="Scripts\DataSource\Script.Insert.008.COUNTRYS_FLAGS_32X.sql" />
-    <None Include="Scripts\DataSource\Script.Insert.009.COUNTRYS_FLAGS_48X.sql" />
-    <None Include="Scripts\DataSource\Script.Insert.010.COUNTRYS_FLAGS_64X.sql" />
-    <None Include="Scripts\DataSource\Script.Insert.011.COUNTRYS_FLAGS_100X.sql" />
-    <None Include="Scripts\DataSource\Script.Insert.012.COUNTRYS_FLAGS_128X.sql" />
-    <None Include="Scripts\DataSource\Script.Insert.013.COUNTRYS_FLAGS_250X.sql" />
-    <None Include="Scripts\DataSource\Script.Insert.014.COUNTRYS_FLAGS_1000X.sql" />
+    <None Include="Scripts\DataSource\Script.Insert.006.COUNTRYS_FLAGS.sql" />
+    <None Include="Scripts\DataSource\TempTables\Script.Flags.Temp.sql" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

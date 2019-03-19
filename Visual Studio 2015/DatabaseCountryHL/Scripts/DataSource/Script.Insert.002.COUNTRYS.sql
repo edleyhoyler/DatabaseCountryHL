@@ -24,24 +24,24 @@ SELECT
 	  [CS].[Latitude]))        [COU_LATITUDE],
 	  (CONVERT(VARCHAR(10),
       [CS].[Longitude]))       [COU_LONGITUDE]
-FROM          [CountryNames_EN_BR]  [CN]
-INNER JOIN    [CountryCodes]        [CC]
+FROM          [#CountryNames_EN_BR]  [CN]
+INNER JOIN    [#CountryCodes]        [CC]
   ON
 	[CN].[ALPHA2] = [CC].[ISO3166-1-Alpha-2]
-INNER JOIN    [CountryBacen]        [CB]
+INNER JOIN    [#CountryBacen]        [CB]
   ON
 	[CN].[ALPHA2] = [CB].[SL_SIGLA]
 INNER JOIN    [CONTINENTS]          [CO]
   ON
 	[CO].[CON_CODE] = [CC].[Continent]
-INNER JOIN [CountriesCoordinates]   [CS]
+INNER JOIN [#CountriesCoordinates]   [CS]
    ON
   [CN].[ALPHA2] =  [CS].[Alpha2];
 PRINT '|Add COUNTRYS [OK]';
 --####################
 --##                ##
 --##     Version    ##
---##     2.0.0.4    ##
+--##     2.0.0.5    ##
 --##     BY  EDY    ##
 --##                ##
 --####################

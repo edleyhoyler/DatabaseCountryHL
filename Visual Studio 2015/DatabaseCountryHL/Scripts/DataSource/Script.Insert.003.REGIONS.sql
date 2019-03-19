@@ -1,7 +1,7 @@
 ﻿PRINT '|Add REGIONS [  ]';
 PRINT '|$(DataSource)$(REGIONS)';
 INSERT INTO REGIONS([REG_NAME])
-(SELECT DISTINCT [E].[NomeRegiao] FROM [EstadoRegiaoBR] [E]);
+(SELECT DISTINCT [E].[NomeRegiao] FROM [#EstadoRegiaoBR] [E]);
 PRINT '|Add REGIONS [OK]';
 --####################
 --##                ##
